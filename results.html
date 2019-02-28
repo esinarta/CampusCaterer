@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Search Results</title>
+    <meta charset="utf-8"/>
+    <style>
+        #navbar {
+            display: table;
+            width: 100%;
+            background: grey;
+            margin-top: 20px;
+            margin-bottom: 10%;
+        }
+        #navbar ul {
+            display: table-row;
+            height: 40px;
+            position: relative;
+        }
+        #navbar li {
+            display: table-cell;
+            text-align: center;
+            vertical-align: center;
+            position: relative;
+            padding-left: 40px;
+            padding-right: 30px;
+            padding-top: 4px;
+        }
+        #logo {
+            position: absolute;
+            left: 50%;
+            margin: -20px 0 0 -45px;
+            padding: 0;
+        }
+        .results {
+            background-color: rgb(194, 194, 194);
+        }
+        .details {
+            background-color: rgb(194, 194, 194);
+            height: 20vh;
+            display: none;
+        }
+        .resultsup {
+            display: flex;
+        }
+        img {
+            height: 100px;
+            width: 100px;
+        }
+        .name {
+            margin-left: 10vw;
+        }
+        .icons {
+            display: flex;
+            background-color: bisque;
+            float: right;
+            height: 80px;
+            margin-top: 10px;
+            margin-left: 40vw;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="logo"><img src="https://pngimage.net/wp-content/uploads/2018/06/logo-placeholder-png-2.png" alt="logo" height=80 width=80></div>
+    <nav id="navbar">
+      <ul>
+        <li><a href=”/”>Home</a></li>
+        <li><a href=”/profile”>Profile</a></li>
+        <li id="third"><a href=”/search”>Search</a></li>
+        <li><a href=”/guides”>Guides</a></li>
+      </ul>
+    </nav>
+
+    <div id="result1" class="results">
+      <div class="resultsup">
+          <img src="https://pbs.twimg.com/media/DxDoBI5XcAIDVIX.jpg" alt="food">
+          <p class="name">Poke Pick</p>
+          <div class ="icons">
+              <p>Location</p>
+              <p>Price</p>
+              <p>Vegetarian</p>
+              <p>Other Icon</p>
+          </div>
+      </div>
+      <p id="details1" class="details">Detailed Information</p>
+    </div>
+    <br/>
+
+    <div id="result2" class="results">
+        <div class="resultsup">
+            <img src="https://pbs.twimg.com/media/DxDoBI5XcAIDVIX.jpg" alt="food">
+            <p class="name">Poke Pick</p>
+            <div class ="icons">
+                <p>Location</p>
+                <p>Price</p>
+                <p>Vegetarian</p>
+                <p>Other Icon</p>
+            </div>
+        </div>
+      <p id="details2" class="details">Information</p>
+    </div>
+    <br/>
+
+    <div id="result3" class="results">
+        <div class="resultsup">
+            <img src="https://pbs.twimg.com/media/DxDoBI5XcAIDVIX.jpg" alt="food">
+            <p class="name">Poke Pick</p>
+            <div class ="icons">
+                <p>Location</p>
+                <p>Price</p>
+                <p>Vegetarian</p>
+                <p>Other Icon</p>
+            </div>
+        </div>
+      <p id="details3" class="details">Information</p>
+    </div>
+    <br/>
+
+    <div id="result4" class="results">
+            <div class="resultsup">
+                <img src="https://pbs.twimg.com/media/DxDoBI5XcAIDVIX.jpg" alt="food">
+                <p class="name">Poke Pick</p>
+                <div class ="icons">
+                    <p>Location</p>
+                    <p>Price</p>
+                    <p>Vegetarian</p>
+                    <p>Other Icon</p>
+                </div>
+            </div>
+      <p id="details4" class="details">Information</p>
+    </div>
+    <br/>
+
+    <div id="result5" class="results">
+            <div class="resultsup">
+                <img src="https://pbs.twimg.com/media/DxDoBI5XcAIDVIX.jpg" alt="food">
+                <p class="name">Poke Pick</p>
+                <div class ="icons">
+                    <p>Location</p>
+                    <p>Price</p>
+                    <p>Vegetarian</p>
+                    <p>Other Icon</p>
+                </div>
+            </div>
+      <p id="details5" class="details">Information</p>
+    </div>
+    <br/>
+    
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function() {
+        /*<![CDATA[*/
+
+          $("#result1").click(function(){
+              $("#details1").slideToggle(250);
+          });
+
+          $("#result2").click(function(){
+              $("#details2").slideToggle(250);
+          });
+
+          $("#result3").click(function(){
+              $("#details3").slideToggle(250);
+          });
+
+          $("#result4").click(function(){
+              $("#details4").slideToggle(250);
+          });
+
+          $("#result5").click(function(){
+              $("#details5").slideToggle(250);
+          });
+
+        });
+
+    /*]]>*/
+    </script>
+
+  </body>
+</html>
