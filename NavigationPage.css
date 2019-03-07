@@ -1,0 +1,72 @@
+
+.c1{
+
+}
+a {
+    color: white;
+}
+#navbar {
+    display: table;
+    width: 100%;
+    background: grey;
+    margin-top: 20px;
+    margin-bottom: 10%;
+}
+#navbar ul {
+    display: table-row;
+    height: 40px;
+    position: relative;
+}
+#navbar li {
+    display: table-cell;
+    text-align: center;
+    vertical-align: center;
+    position: relative;
+    padding-left: 40px;
+    padding-right: 30px;
+    padding-top: 4px;
+}
+#logo {
+    border-radius: 50%;
+    background-color: black;
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    left: 50%;
+    margin: -20px 0 0 -45px;
+    padding: 0;
+} 
+.box1{
+    background-color: cornflowerblue;    
+    width: 390px;
+    height: 60vh;
+    float: left;
+    margin: 50px;
+    box-shadow: -10px 10px Dimgray ;
+}
+.box2{ 
+    background-color: crimson;  
+    width: 390px;
+    height: 60vh;
+    float: left;
+    margin: 50px;
+    box-shadow: -10px 10px Dimgray
+}
+.box3{
+    background-color: forestgreen;
+    width: 390px;
+    height: 60vh;
+    float: left;
+    margin: 50px;
+    box-shadow: -10px 10px Dimgray
+}
+.boxtitle{
+    font-size: 50px;
+    text-align: center;
+}
+.box1:hover,.box2:hover,.box3:hover{
+    margin-top: 10px;
+}
+.body{
+   background-image: url("white-background-1280x720.png"); 
+}
