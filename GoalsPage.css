@@ -1,0 +1,12 @@
+body{
+    padding-left: 20px;
+}
+.list p{
+border-radius: 20px;
+border: 2px solid lightblue;
+padding: 20px; 
+width: 500px;
+}
+.list p:hover{
+    background-color: lightblue;
+}

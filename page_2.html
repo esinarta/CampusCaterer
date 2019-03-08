@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body{
+	background-color: #F5F5F5;
+}
+
+#navbar {
+    display: table;
+    width: 100%;
+    background: grey;
+    margin-top: 20px;
+    margin-bottom: 10%;
+}
+#navbar ul {
+    display: table-row;
+    height: 40px;
+    position: relative;
+}
+#navbar li {
+    display: table-cell;
+    text-align: center;
+    vertical-align: center;
+    position: relative;
+    padding-left: 40px;
+    padding-right: 30px;
+    padding-top: 4px;
+}
+#logo {
+    border-radius: 50%;
+    background-color: black;
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    left: 50%;
+    margin: -20px 0 0 -45px;
+    padding: 0;
+}
+
+.image-top{
+
+	margin-top: -50px;
+	width: 100%;
+    height: 130px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+     object-fit: cover;
+     opacity:0.6;
+}
+
+.navbardiv{
+	margin-bottom: -70px;
+}
+
+.header-top{
+
+	
+	text-align: center;
+	font-size: 40pt;
+	font-weight: bold;
+	 position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: -15px;
+  color: white;
+	
+}
+
+.div2{
+
+	position: relative;
+  text-align: center;
+}
+
+/* Remove margins and padding from the list */
+.goals ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the list items */
+.goals ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  list-style-type: none;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+  text-align: left;
+}
+  
+
+/* Set all odd list items to a different color (zebra-stripes) */
+.goals ul li:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+/* Darker background-color on hover */
+.goals ul li:hover {
+  background: #ddd;
+}
+
+.goals{
+	margin:auto;
+	margin-top: 80px;
+}
+
+
+
+.close:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+
+</style>
+
+
+</head>
+
+<body>
+
+<div id = "logo"> </div>
+<div class = "navbardiv">
+    <nav id="navbar">
+        <ul>
+            <li><a href=”/”>Home</a></li>
+            <li><a href=”/profile”>Profile</a></li>
+            <li id="third"><a href=”/search”>Search</a></li>
+            <li><a href=”/guides”>Guides</a></li>
+        </ul>
+        </nav>
+</div>
+<div class = "div2">
+		
+        <img class = "image-top" src= "photo-1543761048-3b3c96e6e8bf.jpg">
+
+<div> <p class = "header-top">I WANT</p> </div>
+      
+</div>
+<div class="goals">
+	<div class= "checkboxTwo">
+<ul id="myUL">
+  <li><input type="checkbox">Hit the gym </li>
+  <li><input type = "checkbox">goal1</li>
+  <li><input type = "checkbox">goal2</li>
+  <li><input type = "checkbox">goal3</li>
+  <li><input type = "checkbox">goal4</li>
+  <li><input type = "checkbox">goal5</li>
+  <li><input type = "checkbox">goal1</li>
+  <li><input type = "checkbox">goal2</li>
+  <li><input type = "checkbox">goal3</li>
+  <li><input type = "checkbox">goal4</li>
+  <li><input type = "checkbox">goal5</li>
+  <input type=submit>
+</ul>
+</div>
+</div>
+
+	</body>
+	</html>
