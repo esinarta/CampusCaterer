@@ -4,6 +4,15 @@
     <title>Search Results</title>
     <meta charset="utf-8"/>
     <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto');
+        body {
+            font-family: 'Roboto';
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            color: white;
+        }
         #navbar {
             display: table;
             width: 100%;
@@ -26,6 +35,10 @@
             padding-top: 4px;
         }
         #logo {
+            border-radius: 50%;
+            background-color: black;
+            height: 80px;
+            width: 80px;
             position: absolute;
             left: 50%;
             margin: -20px 0 0 -45px;
@@ -36,7 +49,7 @@
         }
         .details {
             background-color: rgb(194, 194, 194);
-            height: 20vh;
+            height: 5vh;
             display: none;
         }
         .resultsup {
@@ -51,16 +64,37 @@
         }
         .icons {
             display: flex;
-            background-color: bisque;
+            background-color: rgb(102, 102, 102);
             float: right;
             height: 80px;
             margin-top: 10px;
             margin-left: 40vw;
         }
+        .location {
+            background-color: white;
+            margin: 5px;
+            width: 50px;
+            text-align: center;
+            padding-top: 25px;
+        }
+        .price {
+            background-color: white;
+            margin: 5px;
+            width: 50px;
+            text-align: center;
+            padding-top: 25px;
+        }
+        .vegetarian {
+            background-color: white;
+            margin: 5px;
+            width: 50px;
+            text-align: center;
+            padding-top: 25px;
+        }
     </style>
   </head>
   <body>
-    <div id="logo"><img src="https://pngimage.net/wp-content/uploads/2018/06/logo-placeholder-png-2.png" alt="logo" height=80 width=80></div>
+    <div id="logo"></div>
     <nav id="navbar">
       <ul>
         <li><a href=”/”>Home</a></li>
@@ -75,13 +109,16 @@
           <img src="https://pbs.twimg.com/media/DxDoBI5XcAIDVIX.jpg" alt="food">
           <p class="name">Poke Pick</p>
           <div class ="icons">
-              <p>Location</p>
-              <p>Price</p>
-              <p>Vegetarian</p>
+              <p class="location">SW2</p>
+              <p class="price">$-$$</p>
+              <p class="vegetarian">V</p>
               <p>Other Icon</p>
           </div>
       </div>
-      <p id="details1" class="details">Detailed Information</p>
+      <div id="details1" class="details">Detailed Information:</div>
+        <p class="details">Location: SW2, cafeteria area</p>
+        <p class="details">Price: $5-$20</p>
+        <p class="details">Food: Asian, Japanese, Rice, Sushi, Vegetarian options available</p>
     </div>
     <br/>
 
@@ -90,9 +127,9 @@
             <img src="https://pbs.twimg.com/media/DxDoBI5XcAIDVIX.jpg" alt="food">
             <p class="name">Poke Pick</p>
             <div class ="icons">
-                <p>Location</p>
-                <p>Price</p>
-                <p>Vegetarian</p>
+                <p class="location">SE12</p>
+                <p class="price">$$</p>
+                <p class="vegetarian">V</p>
                 <p>Other Icon</p>
             </div>
         </div>
@@ -105,9 +142,9 @@
             <img src="https://pbs.twimg.com/media/DxDoBI5XcAIDVIX.jpg" alt="food">
             <p class="name">Poke Pick</p>
             <div class ="icons">
-                <p>Location</p>
-                <p>Price</p>
-                <p>Vegetarian</p>
+                <p class="location">SE12</p>
+                <p class="price">$$</p>
+                <p class="vegetarian">V</p>
                 <p>Other Icon</p>
             </div>
         </div>
@@ -120,9 +157,9 @@
                 <img src="https://pbs.twimg.com/media/DxDoBI5XcAIDVIX.jpg" alt="food">
                 <p class="name">Poke Pick</p>
                 <div class ="icons">
-                    <p>Location</p>
-                    <p>Price</p>
-                    <p>Vegetarian</p>
+                    <p class="location">SE12</p>
+                    <p class="price">$$</p>
+                    <p class="vegetarian">V</p>
                     <p>Other Icon</p>
                 </div>
             </div>
@@ -135,9 +172,9 @@
                 <img src="https://pbs.twimg.com/media/DxDoBI5XcAIDVIX.jpg" alt="food">
                 <p class="name">Poke Pick</p>
                 <div class ="icons">
-                    <p>Location</p>
-                    <p>Price</p>
-                    <p>Vegetarian</p>
+                    <p class="location">SE12</p>
+                    <p class="price">$$</p>
+                    <p class="vegetarian">V</p>
                     <p>Other Icon</p>
                 </div>
             </div>
@@ -152,24 +189,9 @@
         $(document).ready(function() {
         /*<![CDATA[*/
 
-          $("#result1").click(function(){
-              $("#details1").slideToggle(250);
-          });
-
-          $("#result2").click(function(){
-              $("#details2").slideToggle(250);
-          });
-
-          $("#result3").click(function(){
-              $("#details3").slideToggle(250);
-          });
-
-          $("#result4").click(function(){
-              $("#details4").slideToggle(250);
-          });
-
-          $("#result5").click(function(){
-              $("#details5").slideToggle(250);
+          $(".results").click(function(){
+              $(this).children(".details").slideToggle(250);
+              $(this).children(".details").toggleClass('.details');
           });
 
         });
