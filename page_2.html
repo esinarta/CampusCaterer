@@ -136,10 +136,10 @@ body{
     <div class = "navbardiv">
         <nav id="navbar">
             <ul>
-                <li><a href=”/”>Home</a></li>
-                <li><a href=”/profile”>Profile</a></li>
-                <li id="third"><a href=”/search”>Search</a></li>
-                <li><a href=”/guides”>Guides</a></li>
+              <li><a href=NavigationPage.html>Home</a></li>
+              <li><a href=page_2.html>Profile</a></li>
+              <li><a href=results.html>Search</a></li>
+              <li><a href=GoalsPage.html>Guides</a></li>
             </ul>
             </nav>
     </div>
@@ -157,7 +157,7 @@ body{
       <li><input type = "checkbox" name="cb2" class="cb" id="cb2" value="I want to gain muscle">I want to gain muscle</li>
       <li><input type = "checkbox" name="cb3" class="cb" id="cb3" value="I want to eat healthier">I want to eat healthier</li>
       <li><input type = "checkbox" name="cb4" class="cb" id="cb4" value="I want to save money on food">I want to save money on food</li>
-      <li><input type = "checkbox" name="cb5" class="cb" id="cb5" >goal4</li>
+      <li><input type = "checkbox" name="cb5" class="cb" id="cb5" value="I want to make less impact on the environment">I want to make less impact on the environment</li>
       <input type="submit" onclick="submit()">
     </ul>
     </div>
@@ -177,26 +177,62 @@ body{
         });
 
       function submit() {
-        var checkedValue1 = document.querySelector('#cb1:checked').value;
-        firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal1").set({
-          goal1: checkedValue1
-        });
-        var checkedValue2 = document.querySelector('#cb2:checked').value;
-        firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal2").set({
-          goal2: checkedValue2
-        });
-        var checkedValue3 = document.querySelector('#cb3:checked').value;
-        firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal3").set({
-          goal3: checkedValue3
-        });
-        var checkedValue4 = document.querySelector('#cb4:checked').value;
-        firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal4").set({
-          goal4: checkedValue4
-        });
-        var checkedValue5 = document.querySelector('#cb5:checked').value;
-        firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal5").set({
-          goal5: checkedValue5
-        });
+
+        if (document.getElementById("cb1").checked == true) {
+          var checkedValue1 = document.getElementById('cb1').value;
+          firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal1").set({
+            goal1: checkedValue1
+          });
+        } if (document.getElementById("cb1").checked == false) {
+          firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal1").set({
+            goal1: null
+          });
+        }
+
+        if (document.getElementById("cb2").checked == true) {
+          var checkedValue2 = document.getElementById('cb2').value;
+          firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal2").set({
+            goal2: checkedValue2
+          });
+        } if (document.getElementById("cb2").checked == false) {
+          firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal2").set({
+            goal2: null
+          });
+        }
+
+        if (document.getElementById("cb3").checked == true) {
+          var checkedValue3 = document.getElementById('cb3').value;
+          firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal3").set({
+            goal3: checkedValue3
+          });
+        } else if (document.getElementById("cb3").checked == false) {
+          firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal3").set({
+            goal3: null
+          });
+        }
+
+        if (document.getElementById("cb4").checked == true) {
+          var checkedValue4 = document.getElementById('cb4').value;
+          firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal4").set({
+            goal4: checkedValue4
+          });
+        } else if (document.getElementById("cb4").checked == false){
+          firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal4").set({
+            goal4: null
+          });
+        }
+
+        if (document.getElementById("cb5").checked == true) {
+          var checkedValue5 = document.getElementById('cb5').value;
+          firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal5").set({
+            goal5: checkedValue5
+          });
+        } else if (document.getElementById("cb5").checked == false){
+          firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal5").set({
+            goal5: null
+          });
+        }
+        setTimeout(function(){ window.location.href="NavigationPage.html" }, 2000);
       }
       
     </script>

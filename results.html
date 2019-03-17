@@ -92,20 +92,31 @@
             text-align: center;
             padding-top: 25px;
         }
+        .eco {
+            background-color: white;
+            margin: 5px;
+            width: 50px;
+            text-align: center;
+            padding-top: 25px;
+        }
     </style>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+    <script src="setup_firebase.js"></script>
   </head>
   <body>
     <div id="logo"></div>
     <nav id="navbar">
       <ul>
-        <li><a href=”/”>Home</a></li>
-        <li><a href=”/profile”>Profile</a></li>
-        <li id="third"><a href=”/search”>Search</a></li>
-        <li><a href=”/guides”>Guides</a></li>
+        <li><a href=NavigationPage.html>Home</a></li>
+        <li><a href=page_2.html>Profile</a></li>
+        <li><a href=results.html>Search</a></li>
+        <li><a href=GoalsPage.html>Guides</a></li>
       </ul>
     </nav>
 
-    <div id="result1" class="results">
+    <div id="coastal" class="results">
       <div class="resultsup">
           <img src="https://pbs.twimg.com/media/DxDoBI5XcAIDVIX.jpg" alt="food">
           <p class="name">Coastal Kitchen</p>
@@ -113,7 +124,7 @@
               <p class="location">SE12</p>
               <p class="price">$</p>
               <p class="vegetarian">V</p>
-              <p>Other Icon</p>
+              <p class="eco">1</p>
           </div>
       </div>
       <div id="details1" class="details">Detailed Information:</div>
@@ -123,7 +134,7 @@
     </div>
     <br/>
 
-    <div id="result2" class="results">
+    <div id="cool" class="results">
         <div class="resultsup">
             <img src="https://pbs.twimg.com/media/DxDoBI5XcAIDVIX.jpg" alt="food">
             <p class="name">The Cool Rooftop</p>
@@ -131,14 +142,14 @@
                 <p class="location">SE1</p>
                 <p class="price">$-$$</p>
                 <p class="vegetarian">V</p>
-                <p>Other Icon</p>
+                <p class="eco">5</p>
             </div>
         </div>
       <p id="details2" class="details">Information</p>
     </div>
     <br/>
 
-    <div id="result3" class="results">
+    <div id="emerald" class="results">
         <div class="resultsup">
             <img src="https://pbs.twimg.com/media/DxDoBI5XcAIDVIX.jpg" alt="food">
             <p class="name">Emerald Salmon</p>
@@ -146,14 +157,14 @@
                 <p class="location">SW2</p>
                 <p class="price">$$</p>
                 <p class="vegetarian">V</p>
-                <p>Other Icon</p>
+                <p class="eco">4</p>
             </div>
         </div>
       <p id="details3" class="details">Information</p>
     </div>
     <br/>
 
-    <div id="result4" class="results">
+    <div id="ivory" class="results">
             <div class="resultsup">
                 <img src="https://pbs.twimg.com/media/DxDoBI5XcAIDVIX.jpg" alt="food">
                 <p class="name">L'Ivoire</p>
@@ -161,14 +172,14 @@
                     <p class="location">SW12</p>
                     <p class="price">$$$</p>
                     <p class="vegetarian">V</p>
-                    <p>Other Icon</p>
+                    <p class="eco">2</p>
                 </div>
             </div>
       <p id="details4" class="details">Information</p>
     </div>
     <br/>
 
-    <div id="result5" class="results">
+    <div id="modesty" class="results">
             <div class="resultsup">
                 <img src="https://pbs.twimg.com/media/DxDoBI5XcAIDVIX.jpg" alt="food">
                 <p class="name">Modesty</p>
@@ -176,14 +187,14 @@
                     <p class="location">SW1</p>
                     <p class="price">$$</p>
                     <p class="vegetarian">V</p>
-                    <p>Other Icon</p>
+                    <p class="eco">3</p>
                 </div>
             </div>
       <p id="details5" class="details">Information</p>
     </div>
     <br/>
     
-    <div id="result5" class="results">
+    <div id="bear" class="results">
             <div class="resultsup">
                 <img src="https://pbs.twimg.com/media/DxDoBI5XcAIDVIX.jpg" alt="food">
                 <p class="name">The Wild Bear</p>
@@ -191,7 +202,7 @@
                     <p class="location">SE6</p>
                     <p class="price">$-$$</p>
                     <p class="vegetarian">V</p>
-                    <p>Other Icon</p>
+                    <p class="eco">4</p>
                 </div>
             </div>
       <p id="details5" class="details">Information</p>
@@ -209,7 +220,94 @@
               $(this).children(".details").slideToggle(250);
               $(this).children(".details").toggleClass('.details');
           });
+          
+          var authRef = firebase.auth();
+            authRef.onAuthStateChanged(function(user) {
+                var firebaseRef = firebase.database().ref("users/" + firebase.auth().currentUser.uid)
+                /*if (user) {
+                    console.log('Display name onAuthStateChanged : '+ user.displayName);
+                    console.log(user.uid);
+                    var uid = user.uid;
+                    var user = firebase.auth().currentUser;
+                }*/ 
 
+                if (firebaseRef.once("value")
+                    .then(function(snapshot) {
+                        var hasGoal = snapshot.hasChild("goal3");
+                    })) {
+                        $('#ivory').insertAfter( "#cool" );
+                        $('#ivory').css('margin-top', '20px');
+                        $('#emerald').insertAfter( "#ivory" );
+                        $('#emerald').css('margin-top', '20px');
+                        $('#bear').insertAfter( "#ivory" );
+                        $('#bear').css('margin-top', '20px');
+                        $('#modesty').insertAfter( "#bear" );
+                        $('#modesty').css('margin-top', '20px');
+                        $('#coastal').insertAfter( "#modesty" );
+                        $('#coastal').css('margin-top', '20px');
+                } 
+                if (firebaseRef.once("value")
+                    .then(function(snapshot) {
+                        var hasGoal = snapshot.hasChild("goal1");
+                    })) {
+                        $('#emerald').insertAfter( "#cool" );
+                        $('#emerald').css('margin-top', '20px');
+                        $('#ivory').insertAfter( "#ivory" );
+                        $('#ivory').css('margin-top', '20px');
+                        $('#bear').insertAfter( "#ivory" );
+                        $('#bear').css('margin-top', '20px');
+                        $('#modesty').insertAfter( "#bear" );
+                        $('#modesty').css('margin-top', '20px');
+                        $('#coastal').insertAfter( "#modesty" );
+                        $('#coastal').css('margin-top', '20px');
+                } 
+                if (firebaseRef.once("value")
+                    .then(function(snapshot) {
+                        var hasGoal = snapshot.hasChild("goal2");
+                    })) {
+                        $('#modesty').insertAfter( "#bear" );
+                        $('#modesty').css('margin-top', '20px');
+                        $('#ivory').insertAfter( "#modesty" );
+                        $('#ivory').css('margin-top', '20px');
+                        $('#cool').insertAfter( "#ivory" );
+                        $('#cool').css('margin-top', '20px');
+                        $('#emerald').insertAfter( "#cool" );
+                        $('#emerald').css('margin-top', '20px');
+                        $('#coastal').insertAfter( "#emerald" );
+                        $('#coastal').css('margin-top', '20px');
+                } 
+                if (firebaseRef.once("value")
+                    .then(function(snapshot) {
+                        var hasGoal = snapshot.hasChild("goal4");
+                    })) {
+                        $('#cool').insertAfter( "#coastal" );
+                        $('#cool').css('margin-top', '20px');
+                        $('#bear').insertAfter( "#cool" );
+                        $('#bear').css('margin-top', '20px');
+                        $('#modesty').insertAfter( "#bear" );
+                        $('#modesty').css('margin-top', '20px');
+                        $('#emerald').insertAfter( "#modesty" );
+                        $('#emerald').css('margin-top', '20px');
+                        $('#ivory').insertAfter( "#emerald" );
+                        $('#ivory').css('margin-top', '20px');
+                } 
+                if (firebaseRef.once("value")
+                    .then(function(snapshot) {
+                        var hasGoal = snapshot.hasChild("goal5");
+                    })) {
+                        $('#bear').insertAfter( "#cool" );
+                        $('#bear').css('margin-top', '20px');
+                        $('#emerald').insertAfter( "#bear" );
+                        $('#emerald').css('margin-top', '20px');
+                        $('#modesty').insertAfter( "#emerald" );
+                        $('#modesty').css('margin-top', '20px');
+                        $('#ivory').insertAfter( "#modesty" );
+                        $('#ivory').css('margin-top', '20px');
+                        $('#coastal').insertAfter( "#ivory" );
+                        $('#coastal').css('margin-top', '20px');
+                } 
+            });
+              
         });
 
     /*]]>*/
