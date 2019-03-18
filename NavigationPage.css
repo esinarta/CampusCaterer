@@ -38,26 +38,33 @@ a {
 } 
 .box1{
     background-color: cornflowerblue;    
-    width: 390px;
+    width: 25%;
     height: 60vh;
     float: left;
     margin: 50px;
+    margin-left: 7%;
+    margin-Right: 0%;
+
     box-shadow: -10px 10px Dimgray ;
 }
 .box2{ 
     background-color: crimson;  
-    width: 390px;
+    width: 25%;
     height: 60vh;
     float: left;
     margin: 50px;
+    margin-right: 6%;
+    margin-left: 6%;
     box-shadow: -10px 10px Dimgray
 }
 .box3{
     background-color: forestgreen;
-    width: 390px;
+    width: 25%;
     height: 60vh;
     float: left;
     margin: 50px;
+    margin-right: 0%;
+    margin-left: 0%;
     box-shadow: -10px 10px Dimgray
 }
 .boxtitle{
