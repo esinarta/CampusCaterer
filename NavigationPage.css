@@ -1,7 +1,4 @@
 
-.c1{
-
-}
 a {
     color: white;
 }
@@ -44,8 +41,9 @@ a {
     margin: 50px;
     margin-left: 7%;
     margin-Right: 0%;
-
+    border-radius: 20px;
     box-shadow: -10px 10px Dimgray ;
+    background-image: url(box1background.jpg);
 }
 .box2{ 
     background-color: crimson;  
@@ -55,7 +53,9 @@ a {
     margin: 50px;
     margin-right: 6%;
     margin-left: 6%;
-    box-shadow: -10px 10px Dimgray
+    border-radius: 20px;
+    box-shadow: -10px 10px Dimgray;
+    
 }
 .box3{
     background-color: forestgreen;
@@ -65,15 +65,19 @@ a {
     margin: 50px;
     margin-right: 0%;
     margin-left: 0%;
-    box-shadow: -10px 10px Dimgray
+    border-radius: 20px;
+    box-shadow: -10px 10px Dimgray;
 }
 .boxtitle{
-    font-size: 50px;
+    font-size: 40px;
     text-align: center;
+    font-family: 'Corben', Georgia, Times, serif;
+  
 }
 .box1:hover,.box2:hover,.box3:hover{
     margin-top: 10px;
 }
 .body{
    background-image: url("white-background-1280x720.png"); 
+   
 }
