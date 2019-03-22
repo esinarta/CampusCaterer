@@ -1,0 +1,235 @@
+<html>
+<head>
+
+<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
+<script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA6aJwNLnNEbn2FZb5iiCGcwTnEq3B9fPU",
+    authDomain: "foodapp-12113.firebaseapp.com",
+    databaseURL: "https://foodapp-12113.firebaseio.com",
+    projectId: "foodapp-12113",
+    storageBucket: "foodapp-12113.appspot.com",
+    messagingSenderId: "137830050682"
+  };
+  firebase.initializeApp(config);
+</script>
+<script>
+// Initialize the FirebaseUI Widget using Firebase.
+var ui = new firebaseui.auth.AuthUI(firebase.auth());
+var uiConfig = {
+  callbacks: {
+    signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+      // User successfully signed in.
+      // Return type determines whether we continue the redirect automatically
+      // or whether we leave that to developer to handle.
+      return true;
+    },
+    uiShown: function() {
+      // The widget is rendered.
+      // Hide the loader.
+      document.getElementById('loader').style.display = 'none';
+    }
+  },
+  // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+  signInFlow: 'popup',
+  signInSuccessUrl: 'Page_1.html',
+  signInOptions: [
+    // Leave the lines as is for the providers you want to offer your users.
+    //firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+   // firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+    //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+   // firebase.auth.GithubAuthProvider.PROVIDER_ID,
+    firebase.auth.EmailAuthProvider.PROVIDER_ID,
+   // firebase.auth.PhoneAuthProvider.PROVIDER_ID
+  ],
+  // Terms of service url.
+  tosUrl: '<your-tos-url>',
+  // Privacy policy url.
+  privacyPolicyUrl: '<your-privacy-policy-url>'
+};
+
+// The start method will wait until the DOM is loaded.
+ui.start('#firebaseui-auth-container', uiConfig);
+
+firebase.auth().onAuthStateChanged(function(user) {
+
+  if (user) {
+    // User is signed in.
+     document.getElementById("user_div").style.display = "block";
+     document.getElementById("login_div").style.display = "none";
+     document.getElementById("signup").style.display = "none";
+     
+
+     var user = firebase.auth().currentUser;
+
+     if(user != null){
+
+        var email_id = user.email;
+        document.getElementById("user_para").innerHTML = ("Welcome User: " + email_id);
+        window.location.href = "page_3.html";
+        
+
+
+
+     }
+
+
+
+  } else {
+    // No user is signed in.
+    document.getElementById("user_div").style.display = "none";
+    document.getElementById("login_div").style.display = "block";
+    document.getElementById("signup").style.display = "none";
+    
+      }
+});
+
+function login(){
+
+  var userEmail = document.getElementById("email_field").value;
+  var userPass = document.getElementById("password_field").value;
+
+ 
+
+  firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+   alert("Error : " + errorMessage);
+  // ...
+});
+}
+
+function logout(){
+
+firebase.auth().signOut();
+
+}
+
+function signup(){
+
+    document.getElementById("signup").style.display = "block";
+    document.getElementById("login_div").style.display = "none";
+}
+
+
+
+</script>
+
+<style>
+
+body{
+	background-color: #F5F5F5;
+}
+.header1{
+
+	margin:auto;
+	text-align: center;
+	margin-top: -40px;
+}
+
+.header2{
+
+	margin-bottom: 80px;
+    text-align: center;
+}
+
+#firebaseui-auth-container{
+
+	margin:auto;
+	float: center;
+	border-style: outset;
+	background-color: grey;
+}
+
+#navbar {
+    display: table;
+    width: 100%;
+    background: green;
+    margin-top: -9px;
+    margin-bottom: 10%;
+    padding-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}   
+#navbar ul {
+    display: table-row;
+    height: 50px;
+    position: relative;
+   
+}
+#navbar li {
+    display: table-cell;
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: center;
+    position: relative;
+    padding-left: 40px;
+    padding-right: 30px;
+    padding-top: 15px;
+    font-weight: 300;
+    font-family:  sans-serif;
+}
+.navitext {
+    color: white;
+    text-decoration:none;
+}
+#navbar li::before{
+    content: "";
+    display: block;
+    height: 4px;
+    width: 0%;
+    background-color: darkgreen;
+    position: relative;
+    bottom: 6px;
+    transition: all ease-in-out 100ms;
+}
+#navbar li:hover::before{
+    width: 100%;
+}
+</style>
+
+</head>
+<body>
+<!-- The surrounding HTML is left untouched by FirebaseUI.
+     Your app may use that space for branding, controls and other customizations.-->
+<div id = "logo"></div>
+    <nav id="navbar">
+        <ul>
+            <li><a href=”/”>Home</a></li>
+            <li><a href=”/profile”>Profile</a></li>
+            <li id="third"><a href=”/search”>Search</a></li>
+            <li><a href=”/guides”>Guides</a></li>
+        </ul>
+        </nav>
+
+
+<div class = "main-div" id="login_div">
+
+<h1 class = "header1">Welcome to XYZ app</h1>
+<h2 class = "header2"> Please login to for a better version of yourself</h2>
+
+<input type = "email" placeholder="Email..." id ="email_field">
+<input type = "passsword" placeholder="Password..." id="password_field">
+
+
+<button onclick="login()"> Login to your Account </button>
+<button onclick="signup()"> Sign Up </button>
+
+</div>
+<div class="logged_inDiv" id="user_div">
+  <p id="user_para"> Welcome User, you are now logged in </p>
+    <button onclick = "logout()"> logout </button>
+</div>
+
+<div id = "signup">
+<div id="firebaseui-auth-container"></div>
+<div id="loader">Loading...</div>
+</div>
+
+</body>
+</html>
