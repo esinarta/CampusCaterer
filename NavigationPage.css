@@ -32,7 +32,7 @@
 }
 .navitext {
     color: white;
-    text-decoration:none;
+    text-decoration: none;
 }
 #navbar li::before{
     content: "";
@@ -42,7 +42,7 @@
     background-color: darkgreen;
     position: relative;
     bottom: 6px;
-    transition: all ease-in-out 100ms;
+    transition: all ease-in-out 1   400ms;
 }
 #navbar li:hover::before{
     width: 100%;
