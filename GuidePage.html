@@ -1,0 +1,139 @@
+<!DOCTYPE Html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
+<script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+<script src="setup_firebase.js"></script>
+
+
+        <style>
+
+            a {
+        color: white;
+    }
+    #navbar {
+    display: table;
+    width: 100%;
+    background: green;
+    margin-top: -9px;
+    margin-bottom: 10%;
+    padding-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}   
+#navbar ul {
+    display: table-row;
+    height: 50px;
+    position: relative;
+   
+}
+#navbar li {
+    display: table-cell;
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: center;
+    position: relative;
+    padding-left: 40px;
+    padding-right: 30px;
+    padding-top: 15px;
+    font-weight: 300;
+    font-family:  sans-serif;
+}
+.navitext {
+    color: white;
+    text-decoration:none;
+}
+#navbar li::before{
+    content: "";
+    display: block;
+    height: 4px;
+    width: 0%;
+    background-color: darkgreen;
+    position: relative;
+    bottom: 6px;
+    transition: all ease-in-out 100ms;
+}
+#navbar li:hover::before{
+    width: 100%;
+}
+body{
+    padding-left: 20px;
+    background-color: dimgray;
+}
+.list p{
+border-radius: 20px;
+border: 2px solid lightblue;
+padding: 20px; 
+width: 500px;
+    
+}
+.list p:hover{
+    background-color: lightblue;
+}
+h1{
+    margin-bottom: 35px;
+}
+
+
+
+        </style>
+    </head>
+    <body>
+        <div id="logo"></div>
+        <nav id="navbar">
+        <ul>
+            <li><a href=NavigationPage.html>Home</a></li>
+            <li><a href=page_2.html>Profile</a></li>
+            <li><a href=results.html>Search</a></li>
+            <li><a href=GoalsPage.html>Guides</a></li>
+        </ul>
+        </nav>
+        <h1>Guides</h1>
+        <div class="list" id="loseWeight" value="https://www.healthline.com/nutrition/how-to-lose-weight-as-fast-as-possible#section2">
+            <h3><u>Loose Weight</u></h3>
+            <a href="https://www.healthline.com/nutrition/how-to-lose-weight-as-fast-as-possible#section2"><p>How to loose weight fast</p></a>
+        </div>
+        <div class="list" id="gainMuscle" value="https://www.healthline.com/nutrition/26-muscle-building-foods#section1">
+            <h3><u>Gain Muscle</u></h3>
+            <a href="https://www.healthline.com/nutrition/26-muscle-building-foods#section1"><p>Muscle building foods</p></a>
+        </div>
+
+        <div class="list" id ="saveMoney" value="https://www.healthline.com/nutrition/19-ways-to-eat-healthy-on-a-budget#section14">
+            <h3><u>Save Money</u></h3>
+            <a href="https://www.healthline.com/nutrition/19-ways-to-eat-healthy-on-a-budget#section14"><p>Healthy on a budget</p></a>
+        </div>
+
+          <div class="list" id = "ecoFriendly" value="https://greenerideal.com/guides/0327-10-eco-friendly-shopping-tips/">
+            <h3><u>Eco Friendly</u></h3>
+            <a href="https://greenerideal.com/guides/0327-10-eco-friendly-shopping-tips/"><p>Help the Environment</p></a>
+        </div>
+
+
+        <div class="list" id="eatHealthy" value='https://www.heartandstroke.ca/get-healthy/healthy-eating/healthy-eating-basics'>
+            <h3><u>Eat Healthy</u></h3>
+            <a href="https://www.heartandstroke.ca/get-healthy/healthy-eating/healthy-eating-basics"><p>Help your heart</p></a>
+            </div>
+
+            <script>
+                 var weight = document.getElementById("loseWeight").value;
+                 var muscle = document.getElementById("gainMuscle").value;
+                 var money = document.getElementById("saveMoney").value;
+                 var eco = document.getElementById("ecoFriendly").value;
+                 var healthy= document.getElementById("eatHealthy").value;
+
+                 localStorage.setItem("weight", weight);
+                 localStorage.setItem("muscle", muscle);
+                 localStorage.setItem("money", money);
+                 localStorage.setItem("eco", eco);
+                 localStorage.setItem("healthy", healthy);
+
+            </script>
+
+
+    </body>
+    
+</html>

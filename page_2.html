@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
+<script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+<script src="setup_firebase.js"></script>
+<style>
+body{
+  background-color: #F5F5F5;
+}
+#navbar {
+    display: table;
+    width: 100%;
+    background: green;
+    margin-top: -9px;
+    margin-bottom: 10%;
+    padding-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}   
+#navbar ul {
+    display: table-row;
+    height: 50px;
+    position: relative;
+   
+}
+#navbar li {
+    display: table-cell;
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: center;
+    position: relative;
+    padding-left: 40px;
+    padding-right: 30px;
+    padding-top: 15px;
+    font-weight: 300;
+    font-family:  sans-serif;
+}
+.navitext {
+    color: white;
+    text-decoration:none;
+}
+#navbar li::before{
+    content: "";
+    display: block;
+    height: 4px;
+    width: 0%;
+    background-color: darkgreen;
+    position: relative;
+    bottom: 6px;
+    transition: all ease-in-out 100ms;
+}
+#navbar li:hover::before{
+    width: 100%;
+}
+.image-top{
+  margin-top: -50px;
+  width: 100%;
+    height: 130px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+     object-fit: cover;
+     opacity:0.6;
+}
+.navbardiv{
+  margin-bottom: -70px;
+}
+.header-top{
+  
+  text-align: center;
+  font-size: 40pt;
+  font-weight: bold;
+   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: -15px;
+  color: white;
+  
+}
+.div2{
+  position: relative;
+  text-align: center;
+}
+/* Remove margins and padding from the list */
+.goals ul {
+  margin: 0;
+  padding: 0;
+}
+/* Style the list items */
+.goals ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  list-style-type: none;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+  text-align: left;
+}
+  
+/* Set all odd list items to a different color (zebra-stripes) */
+.goals ul li:nth-child(odd) {
+  background: #f9f9f9;
+}
+/* Darker background-color on hover */
+.goals ul li:hover {
+  background: #ddd;
+}
+.goals{
+  margin:auto;
+  margin-top: 80px;
+}
+.close:hover {
+  background-color: #f44336;
+  color: white;
+}
+</style>
+
+
+</head>
+
+<body>
+
+    <div id = "logo"> </div>
+    <div class = "navbardiv">
+        <nav id="navbar">
+            <ul>
+              <li><a href=NavigationPage.html>Home</a></li>
+              <li><a href=page_2.html>Profile</a></li>
+              <li><a href=results.html>Search</a></li>
+              <li><a href=GoalsPage.html>Guides</a></li>
+            </ul>
+            </nav>
+    </div>
+    <div class = "div2">
+        
+            <img class = "image-top" src= "photo-1543761048-3b3c96e6e8bf.jpg">
+
+    <div> <p class = "header-top">I WANT</p> </div>
+          
+    </div>
+    <div class="goals">
+      <div class= "checkboxTwo">
+    <ul id="myUL">
+      <li><input type="checkbox" name="cb1" class="cb" id="cb1" value="I want to lose weight">I want to lose weight</li>
+      <li><input type = "checkbox" name="cb2" class="cb" id="cb2" value="I want to gain muscle">I want to gain muscle</li>
+      <li><input type = "checkbox" name="cb3" class="cb" id="cb3" value="I want to eat healthier">I want to eat healthier</li>
+      <li><input type = "checkbox" name="cb4" class="cb" id="cb4" value="I want to save money on food">I want to save money on food</li>
+      <li><input type = "checkbox" name="cb5" class="cb" id="cb5" value="I want to make less impact on the environment">I want to make less impact on the environment</li>
+      <input type="submit" onclick="submit()">
+    </ul>
+    </div>
+    </div>
+
+    <script>
+        var authRef = firebase.auth();
+        authRef.onAuthStateChanged(function(user) {
+            if (user) {
+                console.log('Display name onAuthStateChanged : '+ user.displayName);
+                console.log(user.uid);
+                var uid = user.uid;
+                var user = firebase.auth().currentUser;
+            } else {
+                console.log('Not logged in');
+            }
+        });
+      function submit() {
+        if (document.getElementById("cb1").checked == true) {
+          var checkedValue1 = document.getElementById('cb1').value;
+          firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal1").set({
+            goal1: checkedValue1
+          });
+
+          var weight = localStorage.getItem("weight");
+          firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/guide1").set({
+            guide1: weight
+          });
+
+        } if (document.getElementById("cb1").checked == false) {
+          firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal1").set({
+            goal1: null
+          });
+
+          firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/guide1").set({
+            guide1: null
+          });
+
+        }
+        if (document.getElementById("cb2").checked == true) {
+          var checkedValue2 = document.getElementById('cb2').value;
+          firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal2").set({
+            goal2: checkedValue2
+          });
+
+          var muscle = localStorage.getItem("muscle");
+          firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/guide2").set({
+            guide2: muscle
+          });
+
+
+        } if (document.getElementById("cb2").checked == false) {
+          firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal2").set({
+            goal2: null
+          });
+
+          firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/guide2").set({
+            guide2: null
+          });
+
+        }
+        if (document.getElementById("cb3").checked == true) {
+          var checkedValue3 = document.getElementById('cb3').value;
+          firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal3").set({
+            goal3: checkedValue3
+          });
+
+          var healthy = localStorage.getItem("healthy");
+          firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/guide3").set({
+            guide3: healthy
+          });
+
+
+        } else if (document.getElementById("cb3").checked == false) {
+          firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal3").set({
+            goal3: null
+          });
+
+          firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/guide3").set({
+            guide3: null
+          });
+
+        }
+        if (document.getElementById("cb4").checked == true) {
+          var checkedValue4 = document.getElementById('cb4').value;
+          firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal4").set({
+            goal4: checkedValue4
+          });
+
+          var money = localStorage.getItem("money");
+          firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/guide4").set({
+            guide4: money
+          });
+
+
+        } else if (document.getElementById("cb4").checked == false){
+          firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal4").set({
+            goal4: null
+          });
+
+          firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/guide4").set({
+            guide4: null
+          });
+
+        }
+        if (document.getElementById("cb5").checked == true) {
+          var checkedValue5 = document.getElementById('cb5').value;
+          firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal5").set({
+            goal5: checkedValue5
+          });
+
+          var eco = localStorage.getItem("eco");
+          firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/guide5").set({
+            guide5: eco
+          });
+
+
+        } else if (document.getElementById("cb5").checked == false){
+          firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal5").set({
+            goal5: null
+          });
+
+          firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/guide5").set({
+            guide5: null
+          });
+
+        }
+        setTimeout(function(){ window.location.href="NavigationPage.html" }, 2000);
+      }
+      
+    </script>
+
+  </body>
+  </html>
