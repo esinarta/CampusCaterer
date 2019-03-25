@@ -93,33 +93,45 @@ h1{
         </ul>
         </nav>
         <h1>Guides</h1>
-        <div class="list" id="loseWeight" value="https://www.healthline.com/nutrition/how-to-lose-weight-as-fast-as-possible#section2">
-            <h3><u>Loose Weight</u></h3>
-            <a href="https://www.healthline.com/nutrition/how-to-lose-weight-as-fast-as-possible#section2"><p>How to loose weight fast</p></a>
-        </div>
-        <div class="list" id="gainMuscle" value="https://www.healthline.com/nutrition/26-muscle-building-foods#section1">
-            <h3><u>Gain Muscle</u></h3>
-            <a href="https://www.healthline.com/nutrition/26-muscle-building-foods#section1"><p>Muscle building foods</p></a>
-        </div>
 
-        <div class="list" id ="saveMoney" value="https://www.healthline.com/nutrition/19-ways-to-eat-healthy-on-a-budget#section14">
-            <h3><u>Save Money</u></h3>
-            <a href="https://www.healthline.com/nutrition/19-ways-to-eat-healthy-on-a-budget#section14"><p>Healthy on a budget</p></a>
-        </div>
-
-          <div class="list" id = "ecoFriendly" value="https://greenerideal.com/guides/0327-10-eco-friendly-shopping-tips/">
-            <h3><u>Eco Friendly</u></h3>
-            <a href="https://greenerideal.com/guides/0327-10-eco-friendly-shopping-tips/"><p>Help the Environment</p></a>
-        </div>
-
-
-        <div class="list" id="eatHealthy" value='https://www.heartandstroke.ca/get-healthy/healthy-eating/healthy-eating-basics'>
-            <h3><u>Eat Healthy</u></h3>
-            <a href="https://www.heartandstroke.ca/get-healthy/healthy-eating/healthy-eating-basics"><p>Help your heart</p></a>
+        <div id="weight">
+            <div class="list" id="loseWeight" value="https://www.healthline.com/nutrition/how-to-lose-weight-as-fast-as-possible#section2">
+                <h3><u>Lose Weight</u></h3>
+                <a href="https://www.healthline.com/nutrition/how-to-lose-weight-as-fast-as-possible#section2"><p>How to lose weight fast</p></a>
             </div>
+        </div>
 
+        <div id="muscle">
+            <div class="list" id="gainMuscle" value="https://www.healthline.com/nutrition/26-muscle-building-foods#section1">
+                <h3><u>Gain Muscle</u></h3>
+                <a href="https://www.healthline.com/nutrition/26-muscle-building-foods#section1"><p>Muscle building foods</p></a>
+            </div>
+        </div>
+
+        <div id="money">
+            <div class="list" id ="saveMoney" value="https://www.healthline.com/nutrition/19-ways-to-eat-healthy-on-a-budget#section14">
+                <h3><u>Save Money</u></h3>
+                <a href="https://www.healthline.com/nutrition/19-ways-to-eat-healthy-on-a-budget#section14"><p>Healthy on a budget</p></a>
+            </div>
+        </div>
+
+        <div id="eco">
+            <div class="list" id = "ecoFriendly" value="https://greenerideal.com/guides/0327-10-eco-friendly-shopping-tips/">
+                <h3><u>Eco Friendly</u></h3>
+                <a href="https://greenerideal.com/guides/0327-10-eco-friendly-shopping-tips/"><p>Help the Environment</p></a>
+            </div>
+        </div>
+
+        <div id="healthy">
+            <div class="list" id="eatHealthy" value='https://www.heartandstroke.ca/get-healthy/healthy-eating/healthy-eating-basics'>
+                <h3><u>Eat Healthy</u></h3>
+                <a href="https://www.heartandstroke.ca/get-healthy/healthy-eating/healthy-eating-basics"><p>Help your heart</p></a>
+            </div>
+        </div>
+
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
             <script>
-                 var weight = document.getElementById("loseWeight").value;
+                 var weight = document.getElementById("weight");
                  var muscle = document.getElementById("gainMuscle").value;
                  var money = document.getElementById("saveMoney").value;
                  var eco = document.getElementById("ecoFriendly").value;
@@ -131,6 +143,62 @@ h1{
                  localStorage.setItem("eco", eco);
                  localStorage.setItem("healthy", healthy);
 
+                 var authRef = firebase.auth();
+                 authRef.onAuthStateChanged(function(user) {
+                   var firebaseRef = firebase.database().ref("users/" + firebase.auth().currentUser.uid)
+
+                   if (firebaseRef.once("value")
+                    .then(function(snapshot) {
+                        var hasGoal = snapshot.hasChild("goal3");
+                    })) {
+                        $('#weight').css('display', 'none');
+                        $('#muscle').css('display', 'none');
+                        $('#money').css('display', 'none');
+                        $('#eco').css('display', 'none');
+                        $('#healthy').css('display', 'block');
+                    } 
+                   if (firebaseRef.once("value")
+                    .then(function(snapshot) {
+                        var hasGoal = snapshot.hasChild("goal1");
+                    })) {
+                        $('#eco').css('display', 'none');
+                        $('#muscle').css('display', 'none');
+                        $('#money').css('display', 'none');
+                        $('#healthy').css('display', 'none');
+                        $('#weight').css('display', 'block');
+                    } 
+                   if (firebaseRef.once("value")
+                    .then(function(snapshot) {
+                        var hasGoal = snapshot.hasChild("goal2");
+                    })) {
+                        $('#weight').css('display', 'none');
+                        $('#eco').css('display', 'none');
+                        $('#money').css('display', 'none');
+                        $('#healthy').css('display', 'none');
+                        $('#muscle').css('display', 'block');
+                    } 
+                   if (firebaseRef.once("value")
+                    .then(function(snapshot) {
+                        var hasGoal = snapshot.hasChild("goal4");
+                    })) {
+                        $('#weight').css('display', 'none');
+                        $('#muscle').css('display', 'none');
+                        $('#eco').css('display', 'none');
+                        $('#healthy').css('display', 'none');
+                        $('#money').css('display', 'block');
+                    } 
+                   if (firebaseRef.once("value")
+                    .then(function(snapshot) {
+                        var hasGoal = snapshot.hasChild("goal5");
+                    })) {
+                        $('#weight').css('display', 'none');
+                        $('#muscle').css('display', 'none');
+                        $('#money').css('display', 'none');
+                        $('#healthy').css('display', 'none');
+                        $('#eco').css('display', 'block');
+                    } 
+                });
+              
             </script>
 
 
