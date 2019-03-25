@@ -1,44 +1,70 @@
 #navbar {
     display: table;
-    width: 100%;
-    background: yellowgreen;
-    margin-top: -9px;
-    padding-top: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
+    width: 70%;
+    margin-top: 0px;
+    height: 51px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+    margin-bottom: 0px;
+    background-color: white;
 }   
 #navbar ul {
     display: table-row;
-    height: 50px;
-    position: relative;
-   
+    position: relative; 
 }
 #navbar li {
     display: table-cell;
-    border: 1px solid black;
-    text-align: center;
-    vertical-align: center;
-    position: relative;
-    padding-left: 40px;
-    padding-right: 30px;
-    padding-top: 15px;
-    font-weight: 300;
-    font-family:  sans-serif;
+    border: 0.5px solid #DCDCDC;
+    border-collapse: collapse;
+    
+    
 }
 .navitext {
-    color: white;
+    color:#484747;
     text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    font-family:  sans-serif;
+   
+    
 }
-#navbar li::before{
-    content: "";
-    display: block;
-    height: 4px;
-    width: 0%;
-    background-color: darkgreen;
-    position: relative;
-    bottom: 6px;
-    transition: all ease-in-out 500ms;
+
+.home:hover{
+    background-color: #59C657;
+    transition: all ease-in-out 200ms;
 }
-#navbar li:hover::before{
+.profile:hover{
+    background-color: #59C657;
+    transition: all ease-in-out 200ms;
+}
+.search:hover{
+    background-color: #59C657;
+    transition: all ease-in-out 200ms;
+}
+.guide:hover{
+    background-color: #59C657;
+    transition: all ease-in-out 200ms;
+}
+
+.line{
+    position: absolute;
+    border: 0.5px solid #DCDCDC;
+    margin-top: 0px;
+    height: 51px;
     width: 100%;
+    z-index:-1;
+    background-color: white;
+   
+}
+.title{
+    text-align: center;
+    height: 100px;
+    
+}
+#navbar div{
+    text-align: center;
+    height: 51px;
+    margin: 0px;
+    line-height: 51px;
 }
