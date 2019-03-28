@@ -52,6 +52,7 @@
                 });
             </script>
         </header>     
+        
     <section class="container">
       
         <a href="page_2.html">
@@ -59,7 +60,7 @@
                 <div class="box1">
                     <h5 class="box1title">Goals</h5>
                     <img class="img1" src="leaf.png" alt="failed">
-                    <p>description of box</p>
+                    <p class="boxtext">Select your goals.</p>
                 </div>
             </div>
         </a>
@@ -69,7 +70,7 @@
                 <div class="box2">
                     <h5 class="box2title">Food Results</h5>
                     <img class="img2" src="leaf.png" alt="failed">
-                    <p>description of box</p>
+                    <p class="boxtext">View your food results.</p>
                 </div>
             </div>
         </a>
@@ -78,7 +79,7 @@
                 <div class="box3">
                     <h5 class="box3title">Food Guide</h5>
                     <img class="img3"src="leaf.png" alt="failed">
-                    <p>description of box</p>
+                    <p class="boxtext">View your food guides.</p>
                 </div>
             </div>
         </a>
@@ -105,16 +106,24 @@
                 
             });    
             $("#box2cover").hover(function() {
-                $(".box2").css("bottom", "30px"); 
+                $(".box2").css("background-color", "#59C657");
+                $(".box2title").css("color", "white");
+                $(".img2").css("opacity", "0"); 
             },
             function() {
-                $(".box2").css("bottom", "0px"); 
+                $(".box2").css("background-color", "white");
+                $(".box2title").css("color", "#484747");
+                $(".img2").css("opacity", "1"); 
             });    
             $("#box3cover").hover(function() {
-                $(".box3").css("bottom", "30px"); 
+                $(".box3").css("background-color", "#59C657");
+                $(".box3title").css("color", "white");
+                $(".img3").css("opacity", "0"); 
             },
             function() {
-                $(".box3").css("bottom", "0px"); 
+                $(".box3").css("background-color", "white");
+                $(".box3title").css("color", "#484747");
+                $(".img3").css("opacity", "1"); 
             });    
         });
     </script>
