@@ -13,6 +13,7 @@
     <body>
         <header>
             <div class="title">
+                <img class="logo" src="assets\logo2.png">
                 <p class="titleword">Campus Caterer</p>
             </div>
             <div class="line"></div>
@@ -57,7 +58,7 @@
             <div id="box1cover">
                 <div class="box1">
                     <h5 class="box1title">Goals</h5>
-                    <img src="leaf.png" alt="failed">
+                    <img class="img1" src="leaf.png" alt="failed">
                     <p>description of box</p>
                 </div>
             </div>
@@ -67,7 +68,7 @@
             <div id="box2cover">
                 <div class="box2">
                     <h5 class="box2title">Food Results</h5>
-<!--                    <img src="leaf.png" alt="failed">-->
+                    <img class="img2" src="leaf.png" alt="failed">
                     <p>description of box</p>
                 </div>
             </div>
@@ -76,7 +77,7 @@
             <div id="box3cover">
                 <div class="box3">
                     <h5 class="box3title">Food Guide</h5>
-<!--                    <img src="leaf.png" alt="failed">-->
+                    <img class="img3"src="leaf.png" alt="failed">
                     <p>description of box</p>
                 </div>
             </div>
@@ -95,12 +96,12 @@
             $("#box1cover").hover(function() {
                 $(".box1").css("background-color", "#59C657");
                 $(".box1title").css("color", "white");
-                $("img").css("opacity", "0");
+                $(".img1").css("opacity", "0");
             },
             function() {
                 $(".box1").css("background-color", "white");
                 $(".box1title").css("color", "#484747");
-                $("img").css("opacity", "1");
+                $(".img1").css("opacity", "1");
                 
             });    
             $("#box2cover").hover(function() {

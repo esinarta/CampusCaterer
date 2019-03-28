@@ -91,12 +91,13 @@ section{
     width: 100%;
     margin: 0px;   
 }
-img{
-    width: 100px;
+.img1, .img2, .img3{
+    width: 50px;
     position: absolute;
     bottom: 5%;
     left: 10%;
 }
+
 
 h3{
     margin: 0px;

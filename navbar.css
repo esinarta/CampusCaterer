@@ -68,15 +68,29 @@
     margin: 0px;
     padding: 0px;
     font-size: 20px;
-    text-align: center;
     font-family: sans-serif;
     position: relative;
     top: 30%;
+   
+    text-align: left;
     font-weight: 600;
+    float: left;
 }
 #navbar div{
     text-align: center;
     height: 51px;
     margin: 0px;
     line-height: 51px;
+}
+.logo{
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    width: 60px;
+    position: relative;
+    margin-left: 5%;
+    top: 0.5vh;
+    text-align: left;
+
+    float: left;
 }
