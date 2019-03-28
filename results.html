@@ -233,79 +233,89 @@
 
                 if (firebaseRef.once("value")
                     .then(function(snapshot) {
-                        var hasGoal = snapshot.hasChild("goal3");
+                        if (snapshot.hasChild("goal3")) {
+                            $('#ivory').insertAfter( "#cool" );
+                            $('#ivory').css('margin-top', '20px');
+                            $('#emerald').insertAfter( "#ivory" );
+                            $('#emerald').css('margin-top', '20px');
+                            $('#bear').insertAfter( "#ivory" );
+                            $('#bear').css('margin-top', '20px');
+                            $('#modesty').insertAfter( "#bear" );
+                            $('#modesty').css('margin-top', '20px');
+                            $('#coastal').insertAfter( "#modesty" );
+                            $('#coastal').css('margin-top', '20px');
+                        }
                     })) {
-                        $('#ivory').insertAfter( "#cool" );
-                        $('#ivory').css('margin-top', '20px');
-                        $('#emerald').insertAfter( "#ivory" );
-                        $('#emerald').css('margin-top', '20px');
-                        $('#bear').insertAfter( "#ivory" );
-                        $('#bear').css('margin-top', '20px');
-                        $('#modesty').insertAfter( "#bear" );
-                        $('#modesty').css('margin-top', '20px');
-                        $('#coastal').insertAfter( "#modesty" );
-                        $('#coastal').css('margin-top', '20px');
-                } 
+                };
+
                 if (firebaseRef.once("value")
                     .then(function(snapshot) {
-                        var hasGoal = snapshot.hasChild("goal1");
+                        if (snapshot.hasChild("goal1")) {
+                            $('#emerald').insertAfter( "#cool" );
+                            $('#emerald').css('margin-top', '20px');
+                            $('#ivory').insertAfter( "#ivory" );
+                            $('#ivory').css('margin-top', '20px');
+                            $('#bear').insertAfter( "#ivory" );
+                            $('#bear').css('margin-top', '20px');
+                            $('#modesty').insertAfter( "#bear" );
+                            $('#modesty').css('margin-top', '20px');
+                            $('#coastal').insertAfter( "#modesty" );
+                            $('#coastal').css('margin-top', '20px');
+                        }
                     })) {
-                        $('#emerald').insertAfter( "#cool" );
-                        $('#emerald').css('margin-top', '20px');
-                        $('#ivory').insertAfter( "#ivory" );
-                        $('#ivory').css('margin-top', '20px');
-                        $('#bear').insertAfter( "#ivory" );
-                        $('#bear').css('margin-top', '20px');
-                        $('#modesty').insertAfter( "#bear" );
-                        $('#modesty').css('margin-top', '20px');
-                        $('#coastal').insertAfter( "#modesty" );
-                        $('#coastal').css('margin-top', '20px');
-                } 
+                }; 
+
                 if (firebaseRef.once("value")
                     .then(function(snapshot) {
-                        var hasGoal = snapshot.hasChild("goal2");
+                        if (snapshot.hasChild("goal2")) {
+                            $('#modesty').insertAfter( "#bear" );
+                            $('#modesty').css('margin-top', '20px');
+                            $('#ivory').insertAfter( "#modesty" );
+                            $('#ivory').css('margin-top', '20px');
+                            $('#cool').insertAfter( "#ivory" );
+                            $('#cool').css('margin-top', '20px');
+                            $('#emerald').insertAfter( "#cool" );
+                            $('#emerald').css('margin-top', '20px');
+                            $('#coastal').insertAfter( "#emerald" );
+                            $('#coastal').css('margin-top', '20px');
+                        }
                     })) {
-                        $('#modesty').insertAfter( "#bear" );
-                        $('#modesty').css('margin-top', '20px');
-                        $('#ivory').insertAfter( "#modesty" );
-                        $('#ivory').css('margin-top', '20px');
-                        $('#cool').insertAfter( "#ivory" );
-                        $('#cool').css('margin-top', '20px');
-                        $('#emerald').insertAfter( "#cool" );
-                        $('#emerald').css('margin-top', '20px');
-                        $('#coastal').insertAfter( "#emerald" );
-                        $('#coastal').css('margin-top', '20px');
                 } 
+
                 if (firebaseRef.once("value")
                     .then(function(snapshot) {
-                        var hasGoal = snapshot.hasChild("goal4");
+                        if (snapshot.hasChild("goal4")) {
+                            $('#cool').insertAfter( "#coastal" );
+                            $('#cool').css('margin-top', '20px');
+                            $('#bear').insertAfter( "#cool" );
+                            $('#bear').css('margin-top', '20px');
+                            $('#modesty').insertAfter( "#bear" );
+                            $('#modesty').css('margin-top', '20px');
+                            $('#emerald').insertAfter( "#modesty" );
+                            $('#emerald').css('margin-top', '20px');
+                            $('#ivory').insertAfter( "#emerald" );
+                            $('#ivory').css('margin-top', '20px');
+                        }
                     })) {
-                        $('#cool').insertAfter( "#coastal" );
-                        $('#cool').css('margin-top', '20px');
-                        $('#bear').insertAfter( "#cool" );
-                        $('#bear').css('margin-top', '20px');
-                        $('#modesty').insertAfter( "#bear" );
-                        $('#modesty').css('margin-top', '20px');
-                        $('#emerald').insertAfter( "#modesty" );
-                        $('#emerald').css('margin-top', '20px');
-                        $('#ivory').insertAfter( "#emerald" );
-                        $('#ivory').css('margin-top', '20px');
-                } 
+                }; 
+
                 if (firebaseRef.once("value")
                     .then(function(snapshot) {
-                        var hasGoal = snapshot.hasChild("goal5");
+                        if (snapshot.hasChild("goal5")) {
+                            $('#bear').insertAfter( "#cool" );
+                            $('#bear').css('margin-top', '20px');
+                            $('#emerald').insertAfter( "#bear" );
+                            $('#emerald').css('margin-top', '20px');
+                            $('#modesty').insertAfter( "#emerald" );
+                            $('#modesty').css('margin-top', '20px');
+                            $('#ivory').insertAfter( "#modesty" );
+                            $('#ivory').css('margin-top', '20px');
+                            $('#coastal').insertAfter( "#ivory" );
+                            $('#coastal').css('margin-top', '20px');
+                        }
                     })) {
-                        $('#bear').insertAfter( "#cool" );
-                        $('#bear').css('margin-top', '20px');
-                        $('#emerald').insertAfter( "#bear" );
-                        $('#emerald').css('margin-top', '20px');
-                        $('#modesty').insertAfter( "#emerald" );
-                        $('#modesty').css('margin-top', '20px');
-                        $('#ivory').insertAfter( "#modesty" );
-                        $('#ivory').css('margin-top', '20px');
-                        $('#coastal').insertAfter( "#ivory" );
-                        $('#coastal').css('margin-top', '20px');
-                } 
+                };
+
             });
               
         });
