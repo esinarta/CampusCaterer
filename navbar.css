@@ -60,10 +60,19 @@
    
 }
 .title{
-    text-align: center;
+ 
     height: 10.5vh;
-    
-    
+}
+.titleword{
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    font-size: 20px;
+    text-align: center;
+    font-family: sans-serif;
+    position: relative;
+    top: 30%;
+    font-weight: 600;
 }
 #navbar div{
     text-align: center;

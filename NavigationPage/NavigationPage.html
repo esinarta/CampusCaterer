@@ -12,7 +12,9 @@
     </head>
     <body>
         <header>
-            <div class="title">title</div>
+            <div class="title">
+                <p class="titleword">Campus Caterer</p>
+            </div>
             <div class="line"></div>
             <nav id="navbar">
             <ul>
@@ -54,7 +56,8 @@
         <a href="page_2.html">
             <div id="box1cover">
                 <div class="box1">
-                    <h5 class="boxtitle">Goals</h5>
+                    <h5 class="box1title">Goals</h5>
+                    <img src="leaf.png" alt="failed">
                     <p>description of box</p>
                 </div>
             </div>
@@ -63,7 +66,8 @@
         <a href="results.html">
             <div id="box2cover">
                 <div class="box2">
-                    <h5 class="boxtitle">Food Results</h5>
+                    <h5 class="box2title">Food Results</h5>
+<!--                    <img src="leaf.png" alt="failed">-->
                     <p>description of box</p>
                 </div>
             </div>
@@ -71,24 +75,33 @@
         <a href="GuidePage.html">
             <div id="box3cover">
                 <div class="box3">
-                    <h5 class="boxtitle">Food Guide</h5>
+                    <h5 class="box3title">Food Guide</h5>
+<!--                    <img src="leaf.png" alt="failed">-->
                     <p>description of box</p>
                 </div>
             </div>
         </a>
     </section>
     <footer>
-        <div class="footer"></div>
+        <div class="footer">
+            <h3>The secret is at the table</h3>
+            <div class="botline"></div>
+        </div>
     </footer>
         <script src="create_user.js"></script>
     </body>
     <script>
         $(document).ready(function(){
             $("#box1cover").hover(function() {
-                $(".box1").css("bottom", "30px"); 
+                $(".box1").css("background-color", "#59C657");
+                $(".box1title").css("color", "white");
+                $("img").css("opacity", "0");
             },
             function() {
-                $(".box1").css("bottom", "0px"); 
+                $(".box1").css("background-color", "white");
+                $(".box1title").css("color", "#484747");
+                $("img").css("opacity", "1");
+                
             });    
             $("#box2cover").hover(function() {
                 $(".box2").css("bottom", "30px"); 
