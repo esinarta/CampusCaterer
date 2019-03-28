@@ -22,10 +22,10 @@ body{
     background-color: dimgray;
 }
 .list p{
-border-radius: 20px;
-border: 2px solid lightblue;
-padding: 20px; 
-width: 500px;
+    border-radius: 20px;
+    border: 2px solid lightblue;
+    padding: 20px; 
+    width: 500px;
     
     
 }
@@ -57,6 +57,7 @@ h1{
                 <li><a href=GuidePage.html class="navitext"><div class="guide">Guides</div></a></li>
             </ul>
             </nav>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
             <script>
                 $(".home").hover(function() {
                     $(".home").css("color", "white"); 
@@ -121,19 +122,7 @@ h1{
             </div>
         </div>
 
-            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
             <script>
-                 var weight = document.getElementById("weight");
-                 var muscle = document.getElementById("gainMuscle").value;
-                 var money = document.getElementById("saveMoney").value;
-                 var eco = document.getElementById("ecoFriendly").value;
-                 var healthy= document.getElementById("eatHealthy").value;
-
-                 localStorage.setItem("weight", weight);
-                 localStorage.setItem("muscle", muscle);
-                 localStorage.setItem("money", money);
-                 localStorage.setItem("eco", eco);
-                 localStorage.setItem("healthy", healthy);
 
                  var authRef = firebase.auth();
                  authRef.onAuthStateChanged(function(user) {
@@ -143,52 +132,68 @@ h1{
                     .then(function(snapshot) {
                         var hasGoal = snapshot.hasChild("goal3");
                     })) {
+                        console.log("test3");
                         $('#weight').css('display', 'none');
                         $('#muscle').css('display', 'none');
                         $('#money').css('display', 'none');
                         $('#eco').css('display', 'none');
                         $('#healthy').css('display', 'block');
                     } 
-                   if (firebaseRef.once("value")
+
+                    if (firebaseRef.once("value")
                     .then(function(snapshot) {
-                        var hasGoal = snapshot.hasChild("goal1");
-                    })) {
-                        $('#eco').css('display', 'none');
-                        $('#muscle').css('display', 'none');
-                        $('#money').css('display', 'none');
-                        $('#healthy').css('display', 'none');
-                        $('#weight').css('display', 'block');
-                    } 
-                   if (firebaseRef.once("value")
+                        if (snapshot.hasChild("goal3")) {
+                            $('#weight').css('display', 'none');
+                            $('#muscle').css('display', 'none');
+                            $('#money').css('display', 'none');
+                            $('#eco').css('display', 'none');
+                            $('#healthy').css('display', 'block');
+                        }
+                    }));
+
+                    if (firebaseRef.once("value")
                     .then(function(snapshot) {
-                        var hasGoal = snapshot.hasChild("goal2");
-                    })) {
-                        $('#weight').css('display', 'none');
-                        $('#eco').css('display', 'none');
-                        $('#money').css('display', 'none');
-                        $('#healthy').css('display', 'none');
-                        $('#muscle').css('display', 'block');
-                    } 
-                   if (firebaseRef.once("value")
+                        if (snapshot.hasChild("goal1")) {
+                            $('#eco').css('display', 'none');
+                            $('#muscle').css('display', 'none');
+                            $('#money').css('display', 'none');
+                            $('#healthy').css('display', 'none');
+                            $('#weight').css('display', 'block');
+                        }
+                    }));
+
+                    if (firebaseRef.once("value")
                     .then(function(snapshot) {
-                        var hasGoal = snapshot.hasChild("goal4");
-                    })) {
-                        $('#weight').css('display', 'none');
-                        $('#muscle').css('display', 'none');
-                        $('#eco').css('display', 'none');
-                        $('#healthy').css('display', 'none');
-                        $('#money').css('display', 'block');
-                    } 
-                   if (firebaseRef.once("value")
+                        if (snapshot.hasChild("goal2")) {
+                            $('#weight').css('display', 'none');
+                            $('#eco').css('display', 'none');
+                            $('#money').css('display', 'none');
+                            $('#healthy').css('display', 'none');
+                            $('#muscle').css('display', 'block');
+                        }
+                    }));
+
+                    if (firebaseRef.once("value")
                     .then(function(snapshot) {
-                        var hasGoal = snapshot.hasChild("goal5");
-                    })) {
-                        $('#weight').css('display', 'none');
-                        $('#muscle').css('display', 'none');
-                        $('#money').css('display', 'none');
-                        $('#healthy').css('display', 'none');
-                        $('#eco').css('display', 'block');
-                    } 
+                        if (snapshot.hasChild("goal4")) {
+                            $('#weight').css('display', 'none');
+                            $('#muscle').css('display', 'none');
+                            $('#eco').css('display', 'none');
+                            $('#healthy').css('display', 'none');
+                            $('#money').css('display', 'block');
+                        }
+                    }));
+
+                    if (firebaseRef.once("value")
+                    .then(function(snapshot) {
+                        if (snapshot.hasChild("goal5")) {
+                            $('#weight').css('display', 'none');
+                            $('#muscle').css('display', 'none');
+                            $('#money').css('display', 'none');
+                            $('#healthy').css('display', 'none');
+                            $('#eco').css('display', 'block');
+                        }
+                    }));
                 });
               
             </script>
