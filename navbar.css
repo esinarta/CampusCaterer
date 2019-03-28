@@ -2,12 +2,13 @@
     display: table;
     width: 70%;
     margin-top: 0px;
-    height: 51px;
+    height: 6.5vh;
     margin-left: auto;
     margin-right: auto;
     padding: 0px;
     margin-bottom: 0px;
     background-color: white;
+    overflow: hidden;
 }   
 #navbar ul {
     display: table-row;
@@ -16,6 +17,7 @@
 #navbar li {
     display: table-cell;
     border: 0.5px solid #DCDCDC;
+    
     border-collapse: collapse;
     
     
@@ -59,7 +61,8 @@
 }
 .title{
     text-align: center;
-    height: 100px;
+    height: 10.5vh;
+    
     
 }
 #navbar div{
