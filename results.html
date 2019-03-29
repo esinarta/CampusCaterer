@@ -12,31 +12,60 @@
             padding: 0;
         }
         .results {
-            background-color: rgb(194, 194, 194);
+            background-color: white;
+            border: 1px solid #DCDCDC;
+            color: #3f3f3f;
+            margin-left: 2vw;
+            margin-right: 2vw;
+            border-radius: 5px;
+            display: none;
+        }
+        .results:hover {
+            background-color: #59C657;
+            border: 1px solid #DCDCDC;
+            color: #3f3f3f;
+        }
+        .results:hover .name {
+            color: white;
+        }
+        .results:hover .icons {
+            color: #3f3f3f;
         }
         .details {
-            background-color: rgb(194, 194, 194);
+            background-color:white;
             height: 5vh;
             display: none;
+            margin-left: 2vw;
+        }
+        .results:hover .details {
+            color: white;
+            background-color: #59C657;
         }
         .resultsup {
             display: flex;
         }
-        img {
+        .foodpic {
             height: 100px;
             width: 100px;
+            margin: 10px;
+            border-radius: 5px;
+            border: 5px solid #59C657;
         }
         .name {
             margin-left: 10vw;
-            width: 15vw;
+            margin-top: 5vh;
+            width: 25vw;
+            font-size: 18pt;
         }
         .icons {
             display: flex;
-            background-color: rgb(102, 102, 102);
+            background-color: #59C657;
             float: right;
             height: 80px;
-            margin-top: 10px;
-            margin-left: 40vw;
+            margin-top: 20px;
+            margin-left: 30vw;
+            margin-right: 3vw;
+            border-radius: 5px;
         }
         .location {
             background-color: white;
@@ -44,6 +73,7 @@
             width: 50px;
             text-align: center;
             padding-top: 25px;
+            border-radius: 5px;
         }
         .price {
             background-color: white;
@@ -51,6 +81,7 @@
             width: 50px;
             text-align: center;
             padding-top: 25px;
+            border-radius: 5px;
         }
         .vegetarian {
             background-color: white;
@@ -58,6 +89,7 @@
             width: 50px;
             text-align: center;
             padding-top: 25px;
+            border-radius: 5px;
         }
         .eco {
             background-color: white;
@@ -65,6 +97,7 @@
             width: 50px;
             text-align: center;
             padding-top: 25px;
+            border-radius: 5px;
         }
     </style>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
@@ -88,6 +121,7 @@
                 <li><a href=GuidePage.html class="navitext"><div class="guide">Guides</div></a></li>
             </ul>
             </nav>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
             <script>
                 $(".home").hover(function() {
                     $(".home").css("color", "white"); 
@@ -118,7 +152,7 @@
 
     <div id="coastal" class="results">
       <div class="resultsup">
-          <img src="https://pbs.twimg.com/media/DxDoBI5XcAIDVIX.jpg" alt="food">
+          <img class="foodpic" src="assets/burgerfries.jpg" alt="food">
           <p class="name">Coastal Kitchen</p>
           <div class ="icons">
               <p class="location">SE12</p>
@@ -128,15 +162,16 @@
           </div>
       </div>
       <div id="details1" class="details">Detailed Information:</div>
-        <p class="details">Location: SW2, cafeteria area</p>
-        <p class="details">Price: $5-$20</p>
-        <p class="details">Food: Asian, Japanese, Rice, Sushi, Vegetarian options available</p>
+        <p class="details">Location: SE12</p>
+        <p class="details">Price: $5-$10</p>
+        <p class="details">Food: Fast food, burgers, sandwiches, fries</p>
+        <p class="details">Eco-Friendly Aspects: Napkins from recycled paper</p>
     </div>
     <br/>
 
     <div id="cool" class="results">
         <div class="resultsup">
-            <img src="https://pbs.twimg.com/media/DxDoBI5XcAIDVIX.jpg" alt="food">
+            <img class="foodpic" src="assets/salad.jpg" alt="food">
             <p class="name">The Cool Rooftop</p>
             <div class ="icons">
                 <p class="location">SE1</p>
@@ -145,13 +180,17 @@
                 <p class="eco">5</p>
             </div>
         </div>
-      <p id="details2" class="details">Information</p>
+        <div id="details2" class="details">Detailed Information:</div>
+            <p class="details">Location: SE1</p>
+            <p class="details">Price: $5-$20</p>
+            <p class="details">Food: Western, Asian, Fusion, Meat, Rice dishes</p>
+            <p class="details">Eco-Friendly Aspects: Paper take-out boxes and bags, wooden utensils, napkins from recycled paper</p>
     </div>
     <br/>
 
     <div id="emerald" class="results">
         <div class="resultsup">
-            <img src="https://pbs.twimg.com/media/DxDoBI5XcAIDVIX.jpg" alt="food">
+            <img class="foodpic" src="assets/sushi.jpg" alt="food">
             <p class="name">Emerald Salmon</p>
             <div class ="icons">
                 <p class="location">SW2</p>
@@ -160,13 +199,17 @@
                 <p class="eco">4</p>
             </div>
         </div>
-      <p id="details3" class="details">Information</p>
+      <div id="details3" class="details">Detailed Information:</div>
+	    <p class="details">Location: SW2</p>
+		<p class="details">Price: $10-$20</p>
+		<p class="details">Food: Asian, Japanese, Sushi, Poke, Noodle dishes</p>
+		<p class="details">Eco-Friendly Aspects: Paper take-out boxes and bags, napkins from recycled paper</p>
     </div>
     <br/>
 
     <div id="ivory" class="results">
             <div class="resultsup">
-                <img src="https://pbs.twimg.com/media/DxDoBI5XcAIDVIX.jpg" alt="food">
+                <img class="foodpic" src="assets/chicken.jpg" alt="food">
                 <p class="name">L'Ivoire</p>
                 <div class ="icons">
                     <p class="location">SW12</p>
@@ -175,13 +218,17 @@
                     <p class="eco">2</p>
                 </div>
             </div>
-      <p id="details4" class="details">Information</p>
+	  <div id="details4" class="details">Detailed Information:</div>
+		<p class="details">Location: SW12</p>
+		<p class="details">Price: $20-$40</p>
+		<p class="details">Food: French, Gourmet cuisine</p>
+		<p class="details">Eco-Friendly Aspects: Paper take-out bags, reusable take-out boxes</p>
     </div>
     <br/>
 
     <div id="modesty" class="results">
             <div class="resultsup">
-                <img src="https://pbs.twimg.com/media/DxDoBI5XcAIDVIX.jpg" alt="food">
+                <img class="foodpic" src="assets/sandwich.jpg" alt="food">
                 <p class="name">Modesty</p>
                 <div class ="icons">
                     <p class="location">SW1</p>
@@ -190,13 +237,17 @@
                     <p class="eco">3</p>
                 </div>
             </div>
-      <p id="details5" class="details">Information</p>
+	  <div id="details4" class="details">Detailed Information:</div>
+		<p class="details">Location: SW1</p>
+		<p class="details">Price: $10-$20</p>
+		<p class="details">Food: Fusion, South American, European, Rice, Potatoes dishes, Salads</p>
+		<p class="details">Eco-Friendly Aspects: Reusable take-out boxes, napkins from recycled paper</p>
     </div>
     <br/>
     
     <div id="bear" class="results">
             <div class="resultsup">
-                <img src="https://pbs.twimg.com/media/DxDoBI5XcAIDVIX.jpg" alt="food">
+                <img class="foodpic" src="assets/steak.jpg" alt="food">
                 <p class="name">The Wild Bear</p>
                 <div class ="icons">
                     <p class="location">SE6</p>
@@ -205,12 +256,14 @@
                     <p class="eco">4</p>
                 </div>
             </div>
-      <p id="details5" class="details">Information</p>
+	  <div id="details5" class="details">Detailed Information:</div>
+		<p class="details">Location: SE6</p>
+		<p class="details">Price: $5-$20</p>
+		<p class="details">Food: Western comfort food, Soups, Salads, Meat dishes</p>
+		<p class="details">Eco-Friendly Aspects: Reusable take-out boxes, wooden utensils, napkins from recycled paper</p>
     </div>
     <br/>
     
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>
 
         $(document).ready(function() {
@@ -244,6 +297,13 @@
                             $('#modesty').css('margin-top', '20px');
                             $('#coastal').insertAfter( "#modesty" );
                             $('#coastal').css('margin-top', '20px');
+
+                            $('#cool').css('display', 'block');
+                            $('#ivory').css('display', 'block');
+                            $('#emerald').css('display', 'block');
+                            $('#bear').css('display', 'block');
+                            $('#modesty').css('display', 'block');
+                            $('#coastal').css('display', 'block');
                         }
                     })) {
                 };
@@ -261,6 +321,13 @@
                             $('#modesty').css('margin-top', '20px');
                             $('#coastal').insertAfter( "#modesty" );
                             $('#coastal').css('margin-top', '20px');
+
+                            $('#cool').css('display', 'block');
+                            $('#ivory').css('display', 'block');
+                            $('#emerald').css('display', 'block');
+                            $('#bear').css('display', 'block');
+                            $('#modesty').css('display', 'block');
+                            $('#coastal').css('display', 'block');
                         }
                     })) {
                 }; 
@@ -278,6 +345,13 @@
                             $('#emerald').css('margin-top', '20px');
                             $('#coastal').insertAfter( "#emerald" );
                             $('#coastal').css('margin-top', '20px');
+
+                            $('#cool').css('display', 'block');
+                            $('#ivory').css('display', 'block');
+                            $('#emerald').css('display', 'block');
+                            $('#bear').css('display', 'block');
+                            $('#modesty').css('display', 'block');
+                            $('#coastal').css('display', 'block');
                         }
                     })) {
                 } 
@@ -295,6 +369,13 @@
                             $('#emerald').css('margin-top', '20px');
                             $('#ivory').insertAfter( "#emerald" );
                             $('#ivory').css('margin-top', '20px');
+
+                            $('#cool').css('display', 'block');
+                            $('#ivory').css('display', 'block');
+                            $('#emerald').css('display', 'block');
+                            $('#bear').css('display', 'block');
+                            $('#modesty').css('display', 'block');
+                            $('#coastal').css('display', 'block');
                         }
                     })) {
                 }; 
@@ -312,6 +393,13 @@
                             $('#ivory').css('margin-top', '20px');
                             $('#coastal').insertAfter( "#ivory" );
                             $('#coastal').css('margin-top', '20px');
+
+                            $('#cool').css('display', 'block');
+                            $('#ivory').css('display', 'block');
+                            $('#emerald').css('display', 'block');
+                            $('#bear').css('display', 'block');
+                            $('#modesty').css('display', 'block');
+                            $('#coastal').css('display', 'block');
                         }
                     })) {
                 };
