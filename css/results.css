@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+body {
+    font-family: 'Roboto';
+    margin: 0;
+    padding: 0;
+}
+.results {
+    background-color: white;
+    border: 1px solid #DCDCDC;
+    color: #3f3f3f;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    border-radius: 5px;
+    display: none;
+}
+.results:hover {
+    background-color: #59C657;
+    border: 1px solid #DCDCDC;
+    color: #3f3f3f;
+}
+.results:hover .name {
+    color: white;
+}
+.results:hover .icons {
+    color: #3f3f3f;
+    background-color: #3f3f3f;
+}
+.results:hover .foodpic {
+    border: 5px solid #3f3f3f;
+}
+.details {
+    background-color:white;
+    height: 5vh;
+    display: none;
+    margin-left: 2vw;
+}
+.results:hover .details {
+    color: white;
+    background-color: #59C657;
+}
+.resultsup {
+    display: flex;
+}
+.foodpic {
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 5px solid #59C657;
+}
+.name {
+    margin-left: 10vw;
+    margin-top: 5vh;
+    width: 25vw;
+    font-size: 18pt;
+}
+.icons {
+    display: flex;
+    background-color: #59C657;
+    float: right;
+    height: 80px;
+    margin-top: 20px;
+    margin-left: 30vw;
+    margin-right: 3vw;
+    border-radius: 5px;
+}
+.location {
+    background-color: white;
+    margin: 5px;
+    width: 50px;
+    text-align: center;
+    padding-top: 25px;
+    border-radius: 5px;
+}
+.price {
+    background-color: white;
+    margin: 5px;
+    width: 50px;
+    text-align: center;
+    padding-top: 25px;
+    border-radius: 5px;
+}
+.vegetarian {
+    background-color: white;
+    margin: 5px;
+    width: 50px;
+    text-align: center;
+    padding-top: 25px;
+    border-radius: 5px;
+}
+.eco {
+    background-color: white;
+    margin: 5px;
+    width: 50px;
+    text-align: center;
+    padding-top: 25px;
+    border-radius: 5px;
+}
