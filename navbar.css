@@ -57,11 +57,13 @@
     width: 100%;
     z-index:-1;
     background-color: white;
+
    
 }
 .title{
  
     height: 10.5vh;
+    background-color: white;
 }
 .titleword{
     position: relative;
@@ -93,4 +95,11 @@
     text-align: left;
 
     float: left;
+}
+.test{
+    position: absolute;
+    float: right;
+    margin: 0px;
+    left: 95%;
+    top: 0%;
 }
