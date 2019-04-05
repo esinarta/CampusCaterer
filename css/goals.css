@@ -41,11 +41,12 @@ body{
 }
 /* Darker background-color on hover */
 .goals ul li:hover {
-    background: #ddd;
+    background: #59C657;
+    color: white;
 }
 .goals{
     margin:auto;
-    margin-top: 80px;
+    margin-top: 40px;
 }
 .close:hover {
     background-color: #f44336;
@@ -54,4 +55,27 @@ body{
 #greeting {
     padding-top: 15px;
     padding-left: 10px;
+}
+#header {
+    text-align: center;
+    color: #3F3F3F;
+}
+#subbutton {
+    background-color: #59C657;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    display:block;
+    margin:auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+input[type="checkbox"] {
+    display: hidden;
+}
+.greenBackground {
+    background-color: #59C657;
 }
