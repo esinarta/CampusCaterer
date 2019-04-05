@@ -1,6 +1,7 @@
 body{
-    font-family: 'Roboto';
     background-image: url("../assets/cloud.jpg");
+    font-family: 'Roboto';
+    margin: 0px;
 }
 .header-top{
     text-align: center;
