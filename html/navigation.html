@@ -9,7 +9,7 @@
         <link type="text/css" rel="stylesheet" href="../css/navbar.css"/>
         <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
         <script src="../javascript/setup_firebase.js"></script>
-        <script>
+        <script src="../javascript/greet_user.js">
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyA6aJwNLnNEbn2FZb5iiCGcwTnEq3B9fPU",
@@ -72,10 +72,9 @@
         </header>     
         
     <section class="container">
-        
-                <button onclick = "logout()"> logout </button>
+        <button onclick = "logout()"> logout </button>
+        <div id="greeting">Hello, <span id="username"></span>!</div>
 
-      
         <a href="goals.html">
             <div id="box1cover">
                 <div class="box1">

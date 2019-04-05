@@ -87,7 +87,8 @@
 */
 body{
     margin: 0px;
-   overflow: hidden;
+    overflow: hidden;
+    font-family: 'Roboto';
 }
 section{
     background-image: url("http://www.perfectfloorchicago.com/wp-content/uploads/2016/06/white-clouds-background-2.jpg");
@@ -149,4 +150,8 @@ button:hover {
     background-color: #3F3F3F;
     color: white;
     font-weight: bold;
+}
+#greeting {
+    padding-top: 15px;
+    padding-left: 10px;
 }

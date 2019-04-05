@@ -1,7 +1,7 @@
 body{
     background-color: #F5F5F5;
+    font-family: 'Roboto';
 }
-
 .header-top{
     text-align: center;
     font-size: 40pt;
@@ -50,4 +50,8 @@ body{
 .close:hover {
     background-color: #f44336;
     color: white;
+}
+#greeting {
+    padding-top: 15px;
+    padding-left: 10px;
 }

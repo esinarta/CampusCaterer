@@ -9,6 +9,7 @@
 <link type="text/css" rel="stylesheet" href="../css/goals.css"/>
 <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
 <script src="../javascript/setup_firebase.js"></script>
+<script src="../javascript/greet_user.js"></script>
  <script>
   // Initialize Firebase
   var config = {
@@ -68,13 +69,8 @@
             </script>
         </header>     
     
-    <div class = "div2">
-        
-            <img class = "image-top" src= "photo-1543761048-3b3c96e6e8bf.jpg">
-
-    <div> <p class = "header-top">I WANT</p> </div>
-          
-    </div>
+    <div id="greeting">Hello, <span id="username"></span>!<br>Select your goal here.</div>
+    
     <div class="goals">
       <div class= "checkboxTwo">
     <ul id="myUL">
