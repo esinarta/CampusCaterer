@@ -8,7 +8,7 @@
 <link type="text/css" rel="stylesheet" href="../css/navbar.css"/>
 <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
 <script src="../javascript/setup_firebase.js"></script>
- <script>
+<script src="../javascript/greet_user.js">
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyA6aJwNLnNEbn2FZb5iiCGcwTnEq3B9fPU",
@@ -101,8 +101,8 @@ h1{
                 });
             </script>
         </header> 
+        <div id="greeting">Hello, <span id="username"></span>!<br>Here are some guides that best match your goal:</div>
         <h1>Guides</h1>
-
         <div id="weight">
             <div class="list" id="loseWeight" value="https://www.healthline.com/nutrition/how-to-lose-weight-as-fast-as-possible#section2">
                 <h3><u>Lose Weight</u></h3>

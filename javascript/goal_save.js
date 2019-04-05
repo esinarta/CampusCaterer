@@ -3,12 +3,20 @@ authRef.onAuthStateChanged(function(user) {
     if (user) {
         console.log('Display name onAuthStateChanged : '+ user.displayName);
         console.log(user.uid);
+        var output = document.getElementById("username");
         var uid = user.uid;
         var user = firebase.auth().currentUser;
+        output.innerHTML(user.displayName);
     } else {
         console.log('Not logged in');
     }
 });
+
+$('.cbdiv').on('click', function(){
+    var checkbox = $(this).children('input[type="checkbox"]');
+    checkbox.prop('checked', !checkbox.prop('checked'));
+ });
+
 function submit() {
 if (document.getElementById("cb1").checked == true) {
     var checkedValue1 = document.getElementById('cb1').value;

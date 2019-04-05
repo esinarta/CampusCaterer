@@ -9,18 +9,22 @@
         <link type="text/css" rel="stylesheet" href="../css/navbar.css"/>
         <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
         <script src="../javascript/setup_firebase.js"></script>
+
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <script>
+
+        <script src="../javascript/greet_user.js">
+
   // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyA6aJwNLnNEbn2FZb5iiCGcwTnEq3B9fPU",
-    authDomain: "foodapp-12113.firebaseapp.com",
-    databaseURL: "https://foodapp-12113.firebaseio.com",
-    projectId: "foodapp-12113",
-    storageBucket: "foodapp-12113.appspot.com",
-    messagingSenderId: "137830050682"
-  };
-  firebase.initializeApp(config);
+    var config = {
+        apiKey: "AIzaSyA6aJwNLnNEbn2FZb5iiCGcwTnEq3B9fPU",
+        authDomain: "foodapp-12113.firebaseapp.com",
+        databaseURL: "https://foodapp-12113.firebaseio.com",
+        projectId: "foodapp-12113",
+        storageBucket: "foodapp-12113.appspot.com",
+        messagingSenderId: "137830050682"
+    };
+        firebase.initializeApp(config);
 </script>
 
 <script src="../javascript/signup_function.js"></script>
@@ -73,10 +77,9 @@
         </header>     
         
     <section class="container">
-        
-                <button onclick = "logout()"> logout </button>
+        <button onclick = "logout()"> logout </button>
+        <div id="greeting">Hello, <span id="username"></span>!</div>
 
-      
         <a href="goals.html">
             <div id="box1cover">
                 <div class="box1">

@@ -9,6 +9,7 @@
 <link type="text/css" rel="stylesheet" href="../css/goals.css"/>
 <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
 <script src="../javascript/setup_firebase.js"></script>
+<script src="../javascript/greet_user.js"></script>
  <script>
   // Initialize Firebase
   var config = {
@@ -68,22 +69,28 @@
             </script>
         </header>     
     
-    <div class = "div2">
-        
-            <img class = "image-top" src= "photo-1543761048-3b3c96e6e8bf.jpg">
-
-    <div> <p class = "header-top">I WANT</p> </div>
-          
-    </div>
+    <div id="greeting">Hello, <span id="username"></span>!<br>Select your goal here.</div>
+    
+    <h2 id="header">Goal List</h2>
     <div class="goals">
       <div class= "checkboxTwo">
     <ul id="myUL">
-      <li><input type="checkbox" name="cb1" class="cb" id="cb1" value="I want to lose weight">I want to lose weight</li>
-      <li><input type = "checkbox" name="cb2" class="cb" id="cb2" value="I want to gain muscle">I want to gain muscle</li>
-      <li><input type = "checkbox" name="cb3" class="cb" id="cb3" value="I want to eat healthier">I want to eat healthier</li>
-      <li><input type = "checkbox" name="cb4" class="cb" id="cb4" value="I want to save money on food">I want to save money on food</li>
-      <li><input type = "checkbox" name="cb5" class="cb" id="cb5" value="I want to make less impact on the environment">I want to make less impact on the environment</li>
-      <input type="submit" onclick="submit()">
+        <div>
+            <li class="cbdiv"><input type="checkbox" name="cb1" class="cb" id="cb1" value="I want to lose weight" onclick="toggle()">I want to lose weight</li>
+        </div>
+        <div>
+            <li class="cbdiv"><input type="checkbox" name="cb2" class="cb" id="cb2" value="I want to gain muscle">I want to gain muscle</li>
+        </div>
+        <div>
+            <li class="cbdiv"><input type="checkbox" name="cb3" class="cb" id="cb3" value="I want to eat healthier">I want to eat healthier</li>
+        </div>
+        <div>
+            <li class="cbdiv"><input type="checkbox" name="cb4" class="cb" id="cb4" value="I want to save money on food">I want to save money on food</li>
+        </div>
+        <div>
+            <li class="cbdiv"><input type="checkbox" name="cb5" class="cb" id="cb5" value="I want to make less impact on the environment">I want to make less impact on the environment</li>
+        </div>
+        <input id="subbutton" type="submit" onclick="submit()">
     </ul>
     </div>
     </div>
