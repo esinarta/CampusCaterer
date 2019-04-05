@@ -30,8 +30,8 @@
     }
     
 body{
-  
-    background-color: dimgray;
+    background-image: url("../assets/cloud.jpg");
+    margin: 0px;
 }
 .list p{
     border-radius: 20px;
@@ -63,17 +63,22 @@ h1{
     </head>
     <body>
         <header>
-            <div class="title">title</div>
+            <div class="title">
+                <img class="logo" src="..\assets\logo2.png">
+                <p class="titleword">Campus Caterer</p>
+            </div>
+            <div class="test"></div>
             <div class="line"></div>
+            
             <nav id="navbar">
+            
             <ul>
                 <li><a href=navigation.html class="navitext"><div class="home">Home</div></a></li>
-                <li><a href=goals.html class="navitext"><div class="profile">Profile</div></a></li>
+                <li><a href=goals.html class="navitext"><div class="profile">Goals</div></a></li>
                 <li class="rest"><a href=results.html class="navitext"><div class="search">Restaurants</div></a></li>
                 <li><a href=guides.html class="navitext"><div class="guide">Guides</div></a></li>
             </ul>
             </nav>
-            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
             <script>
                 $(".home").hover(function() {
                     $(".home").css("color", "white"); 
@@ -100,7 +105,7 @@ h1{
                     $(".guide").css("color", "#484747"); 
                 });
             </script>
-        </header> 
+        </header>  
         <div id="greeting">Hello, <span id="username"></span>!<br>Here are some guides that best match your goal:</div>
         <h1>Guides</h1>
         <div id="weight">

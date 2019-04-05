@@ -1,6 +1,7 @@
 body{
-    background-color: #F5F5F5;
+    background-image: url("../assets/cloud.jpg");
     font-family: 'Roboto';
+    margin: 0px;
 }
 .header-top{
     text-align: center;
