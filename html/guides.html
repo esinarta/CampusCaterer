@@ -1,20 +1,21 @@
-<!DOCTYPE Html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css"/>
-<link type="text/css" rel="stylesheet" href="../css/navbar.css"/>
-<script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
-<link type="text/css" rel="stylesheet" href="../css/guides.css"/>
-<script src="../javascript/setup_firebase.js"></script>
-<script src="../javascript/greet_user.js"></script>
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>    
-<link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css"/>
+        <link type="text/css" rel="stylesheet" href="../css/navbar.css"/>
+        
+        <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+        <link type="text/css" rel="stylesheet" href="../css/guides.css"/>
+        <script src="../javascript/setup_firebase.js"></script>
+        <script src="../javascript/greet_user.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>    
+        <link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
 
-<script>
+        <script>
 // Initialize Firebase
   var config = {
     apiKey: "AIzaSyA6aJwNLnNEbn2FZb5iiCGcwTnEq3B9fPU",
@@ -26,7 +27,7 @@
   };
   firebase.initializeApp(config);
 </script>
-<script src="../javascript/signup_function.js"></script>
+        <script src="../javascript/signup_function.js"></script>
     </head>
     <body>
         <header>
@@ -38,13 +39,12 @@
             <div class="line"></div>
             
             <nav id="navbar">
-            
-            <ul>
-                <li><a href=navigation.html class="navitext"><div class="home">Home</div></a></li>
-                <li><a href=goals.html class="navitext"><div class="profile">Goals</div></a></li>
-                <li class="rest"><a href=results.html class="navitext"><div class="search">Restaurants</div></a></li>
-                <li><a href=guides.html class="navitext"><div class="guide">Guides</div></a></li>
-            </ul>
+                <ul>
+                    <li><a href=navigation.html class="navitext"><div class="home">Home</div></a></li>
+                    <li><a href=goals.html class="navitext"><div class="profile">Goals</div></a></li>
+                    <li class="rest"><a href=results.html class="navitext"><div class="search">Restaurants</div></a></li>
+                    <li><a href=guides.html class="navitext"><div class="guide">Guides</div></a></li>
+                </ul>
             </nav>
             <script>
                 $(".home").hover(function() {
@@ -80,16 +80,14 @@
         <div id="weight">
              
             <div class="list" id="loseWeight" value="https://www.healthline.com/nutrition/how-to-lose-weight-as-fast-as-possible#section2">
-               
-                <a href="https://www.healthline.com/nutrition/how-to-lose-weight-as-fast-as-possible#section2">
+               <a href="https://www.healthline.com/nutrition/how-to-lose-weight-as-fast-as-possible#section2">
                     <div class="guide1">
                         <h5 class="guide1title">How to lose weight quickly</h5>
                         <img class="img1" src="..\assets\leaf.png" alt="failed">
                         <p class="guidetext">Find out how to loose weight quickly and efficienly through your diet.</p>
                     </div>
                 </a>
-               
-                <a href="https://www.dietdoctor.com/how-to-lose-weight">
+               <a href="https://www.dietdoctor.com/how-to-lose-weight">
                 <div class="guide2">
                         <h5 class="guide2title">Key points on losing weight</h5>
                         <img class="img2" src="..\assets\leaf.png" alt="failed">
@@ -178,30 +176,30 @@
 
         <script src="../javascript/guides_sort.js"></script>
         <script>
-        $(document).ready(function(){
-            $(".guide1").hover(function() {
-                $(".guide1").css("background-color", "#59C657");
-                $(".guide1title").css("color", "white");
-                $(".img1").css("opacity", "0");
-            },
-            function() {
-                $(".guide1").css("background-color", "white");
-                $(".guide1title").css("color", "#484747");
-                $(".img1").css("opacity", "1");
-                
-            });    
-            $(".guide2").hover(function() {
-                $(".guide2").css("background-color", "#59C657");
-                $(".guide2title").css("color", "white");
-                $(".img2").css("opacity", "0"); 
-            },
-            function() {
-                $(".guide2").css("background-color", "white");
-                $(".guide2title").css("color", "#484747");
-                $(".img2").css("opacity", "1"); 
-            });    
-        });
-    </script>
+            $(document).ready(function(){
+                $(".guide1").hover(function() {
+                    $(".guide1").css("background-color", "#59C657");
+                    $(".guide1title").css("color", "white");
+                    $(".img1").css("opacity", "0");
+                },
+                function() {
+                    $(".guide1").css("background-color", "white");
+                    $(".guide1title").css("color", "#484747");
+                    $(".img1").css("opacity", "1");
+                    
+                });    
+                $(".guide2").hover(function() {
+                    $(".guide2").css("background-color", "#59C657");
+                    $(".guide2title").css("color", "white");
+                    $(".img2").css("opacity", "0"); 
+                },
+                function() {
+                    $(".guide2").css("background-color", "white");
+                    $(".guide2title").css("color", "#484747");
+                    $(".img2").css("opacity", "1"); 
+                });    
+            });
+        </script>
     </body>
     
 </html>
