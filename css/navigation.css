@@ -70,20 +70,14 @@
 .box2title,.box3title{
     margin-bottom: 0px;
 }
-footer{
+.footer{
     background-color: #59C657;
     height: 16vh;
     width: 100%;
 
     
 }
-/*
-#box1cover:hover,.box2:hover,.box3:hover{
-    margin-top: 10px;
-    position: relative;
-    bottom: 20px;
-}
-*/
+
 body{
     margin: 0px;
     overflow: hidden;
