@@ -12,6 +12,8 @@
 <script src="../javascript/setup_firebase.js"></script>
 <script src="../javascript/greet_user.js"></script>
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>    
+<link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
+
 <script>
 // Initialize Firebase
   var config = {
@@ -25,13 +27,6 @@
   firebase.initializeApp(config);
 </script>
 <script src="../javascript/signup_function.js"></script>
-
-<style>
-
-
-
-
-</style>
     </head>
     <body>
         <header>
@@ -79,44 +74,134 @@
             </script>
         </header>  
         <div id="greeting">Hello, <span id="username"></span>!<br>Here are some guides that best match your goal:</div>
-        <h1>Guides</h1>
+        <h1 class="heading">Guides</h1>
+        <p class="descript">Here are two hand picked guides that we decided will be helpful for your needs.<br><br>Don't forget to choose your goals first!</p>
+        <img class="arrow" src="https://cdn.pixabay.com/photo/2012/04/02/16/09/arrow-24847_960_720.png">
         <div id="weight">
+             
             <div class="list" id="loseWeight" value="https://www.healthline.com/nutrition/how-to-lose-weight-as-fast-as-possible#section2">
-                <h3><u>Lose Weight</u></h3>
-                <a href="https://www.healthline.com/nutrition/how-to-lose-weight-as-fast-as-possible#section2"><p>How to lose weight fast</p></a>
+               
+                <a href="https://www.healthline.com/nutrition/how-to-lose-weight-as-fast-as-possible#section2">
+                    <div class="guide1">
+                        <h5 class="guide1title">How to lose weight quickly</h5>
+                        <img class="img1" src="..\assets\leaf.png" alt="failed">
+                        <p class="guidetext">Find out how to loose weight quickly and efficienly through your diet.</p>
+                    </div>
+                </a>
+               
+                <a href="https://www.dietdoctor.com/how-to-lose-weight">
+                <div class="guide2">
+                        <h5 class="guide2title">Key points on losing weight</h5>
+                        <img class="img2" src="..\assets\leaf.png" alt="failed">
+                        <p class="guidetext">Find 18 helpful tips on how to lose weight in your everyday life.</p>
+                    </div>
+                </a>
             </div>
         </div>
 
         <div id="muscle">
             <div class="list" id="gainMuscle" value="https://www.healthline.com/nutrition/26-muscle-building-foods#section1">
-                <h3><u>Gain Muscle</u></h3>
-                <a href="https://www.healthline.com/nutrition/26-muscle-building-foods#section1"><p>Muscle building foods</p></a>
+                <a href="https://www.healthline.com/nutrition/26-muscle-building-foods#section1">
+                    <div class="guide1">
+                        <h5 class="guide1title">Diet to develop muscles</h5>
+                        <img class="img1" src="..\assets\leaf.png" alt="failed">
+                        <p class="guidetext">Find 26 nutrional foods to impove muscle building.</p>
+                    </div>
+                </a>
+                <a href="https://www.aworkoutroutine.com/the-muscle-building-workout-routine/">
+                <div class="guide2">
+                        <h5 class="guide2title">Workout routines to gain muscle</h5>
+                        <img class="img2" src="..\assets\leaf.png" alt="failed">
+                        <p class="guidetext">Find workout routines that help develop your muscles.</p>
+                    </div>
+                </a>
             </div>
         </div>
 
         <div id="money">
             <div class="list" id ="saveMoney" value="https://www.healthline.com/nutrition/19-ways-to-eat-healthy-on-a-budget#section14">
-                <h3><u>Save Money</u></h3>
-                <a href="https://www.healthline.com/nutrition/19-ways-to-eat-healthy-on-a-budget#section14"><p>Healthy on a budget</p></a>
+                <a href="https://www.healthline.com/nutrition/19-ways-to-eat-healthy-on-a-budget#section14">
+                    <div class="guide1">
+                        <h5 class="guide1title">How to eat healthy on a budget</h5>
+                        <img class="img1" src="..\assets\leaf.png" alt="failed">
+                        <p class="guidetext">Find out how keep a healthy diet while on a low income budget.</p>
+                    </div>
+                </a>
+                <a href="http://www.unlockfood.ca/en/Articles/Budget/20-Ways-to-Save-Money-on-Your-Groceries.aspx">
+                <div class="guide2">
+                        <h5 class="guide2title">How to save money on groceries</h5>
+                        <img class="img2" src="..\assets\leaf.png" alt="failed">
+                        <p class="guidetext">Find 20 ways to save money one your every day groceries.</p>
+                    </div>
+                </a>
+                
             </div>
         </div>
 
         <div id="eco">
             <div class="list" id = "ecoFriendly" value="https://greenerideal.com/guides/0327-10-eco-friendly-shopping-tips/">
-                <h3><u>Eco Friendly</u></h3>
-                <a href="https://greenerideal.com/guides/0327-10-eco-friendly-shopping-tips/"><p>Help the Environment</p></a>
+                <a href="https://greenerideal.com/guides/0327-10-eco-friendly-shopping-tips/">
+                   <div class="guide1">
+                        <h5 class="guide1title">How to shop eco-friendly</h5>
+                        <img class="img1" src="..\assets\leaf.png" alt="failed">
+                        <p class="guidetext">Find out how you can shop more eco-friendly to keep a clean enviroment.</p>
+                    </div> 
+                </a>
+                <a href="https://nutritiouslife.com/live-consciously/eco-friendly-diet/">
+                <div class="guide2">
+                        <h5 class="guide2title">How to have a eco-friendly diet</h5>
+                        <img class="img2" src="..\assets\leaf.png" alt="failed">
+                        <p class="guidetext">Find out how you can have an eco-friendly diet and make less impact on the enviroment.</p>
+                    </div>
+                </a>
             </div>
         </div>
 
         <div id="healthy">
             <div class="list" id="eatHealthy" value='https://www.heartandstroke.ca/get-healthy/healthy-eating/healthy-eating-basics'>
-                <h3><u>Eat Healthy</u></h3>
-                <a href="https://www.heartandstroke.ca/get-healthy/healthy-eating/healthy-eating-basics"><p>Help your heart</p></a>
+                <a href="https://www.heartandstroke.ca/get-healthy/healthy-eating/healthy-eating-basics">
+                    <div class="guide1">
+                        <h5 class="guide1title">How eat healthy regularly</h5>
+                        <img class="img1" src="..\assets\leaf.png" alt="failed">
+                        <p class="guidetext">Learn the basics on how you can eat healthy to prevent health problems.</p>
+                    </div> 
+                </a>
+                <a href="https://www.self.com/story/20-ways-to-eat-healthier">
+                <div class="guide2">
+                        <h5 class="guide2title">How you can eat healthier in 25 ways</h5>
+                        <img class="img2" src="..\assets\leaf.png" alt="failed">
+                        <p class="guidetext">Find 25 Easy Ways to Eat Healthier Every Day</p>
+                    </div>
+                </a>
             </div>
         </div>
 
         <script src="../javascript/guides_sort.js"></script>
-
+        <script>
+        $(document).ready(function(){
+            $(".guide1").hover(function() {
+                $(".guide1").css("background-color", "#59C657");
+                $(".guide1title").css("color", "white");
+                $(".img1").css("opacity", "0");
+            },
+            function() {
+                $(".guide1").css("background-color", "white");
+                $(".guide1title").css("color", "#484747");
+                $(".img1").css("opacity", "1");
+                
+            });    
+            $(".guide2").hover(function() {
+                $(".guide2").css("background-color", "#59C657");
+                $(".guide2title").css("color", "white");
+                $(".img2").css("opacity", "0"); 
+            },
+            function() {
+                $(".guide2").css("background-color", "white");
+                $(".guide2title").css("color", "#484747");
+                $(".img2").css("opacity", "1"); 
+            });    
+        });
+    </script>
     </body>
     
 </html>

@@ -1,22 +1,10 @@
 body{
-    
+    background-image: url(../assets/cloud.jpg);
     margin: 0px;
+    overflow: hidden;
+    font-family: 'Roboto';
 }
-body{
-    padding-left: 20px;
-}
-.list p{
-border-radius: 20px;
-border: 2px solid lightblue;
-padding: 20px; 
-width: 500px;
-color: black;
-text-decoration: none;
-    
-}
-.list p:hover{
-    background-color: lightblue;
-}
+
 
 #greeting {
     padding-top: 15px;
@@ -25,26 +13,8 @@ text-decoration: none;
 a {
     color: white;
     text-decoration: none;
-}
-.list p{
-    border-radius: 20px;
-    border: 2px solid lightblue;
-    padding: 20px; 
-    width: 500px;
     
     
-}
-.list p:hover{
-    background-color: lightblue;
-    
-}
-h1{
-    margin-bottom: 35px;
-      padding-left: 20px;
-}
-
-.list{
-        padding-left: 20px;
 }
 
 #weight, #muscle, #money, #eco, #healthy {
@@ -52,19 +22,77 @@ h1{
     color: black;
     text-decoration: none;
         
-    }
-    .list p:hover{
-        background-color: lightblue;
-    }
-    h1{
-        margin-bottom: 35px;
-    }
-    #greeting {
-        font-size: 11pt;
-        font-weight: 500;
-        color: #3f3f3f;
-        padding-top: 15px;
-        padding-left: 10px;
-        margin-bottom: 20px;
-    }
+}
+
+
+#greeting {
+    font-size: 11pt;
+    font-weight: 500;
+    color: #3f3f3f;
+    padding-top: 15px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+
+.guide1{ 
+    width: 25%;
+    float: left;  
+    height: 58vh;
+    background-color: white;
+    margin: 0px;
+    border-radius: 5px;
+    border: 1px solid #DCDCDC;
+    position: relative;  
+    left: 5%;
+    background-color: white;
+    top: 10%;
+}
+.guide2{ 
+    width: 25%;
+    float: left;
+    height: 58vh;   
+    background-color: white;
+    margin: 0px;
+    border-radius: 5px;
+    border: 1px solid #DCDCDC;
+    position: relative;  
+    left: 10%;
+    background-color: white;   
+}
+.heading{
+    margin-bottom: 3%;
+    margin-left: 2%;
+}
+.descript{
+    width: 25%;
+    float: left;
+    margin: 0 2% 0 2%;
+    font-size: 1.7em;
+}
+
+    
+.guide1title, .guide2title{
+    color: #484747;
+    font-size: 40px;
+    text-align: center;
+    
+    
+}
+    
+.img1,.img2{
+    width: 50px;
+    position: absolute;
+    bottom: 5%;
+    left: 10%;
+}
+.guidetext{
+    margin: 2%;
+}
+.arrow{
+    width: 10%;
+    top: 68%;
+    left: 8%;
+    position: absolute;
+}
 

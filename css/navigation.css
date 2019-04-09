@@ -70,10 +70,11 @@
 .box2title,.box3title{
     margin-bottom: 0px;
 }
-.footer{
+footer{
     background-color: #59C657;
     height: 16vh;
     width: 100%;
+
     
 }
 /*
@@ -102,26 +103,13 @@ section{
 }
 
 
-h3{
-    margin: 0px;
-    padding: 0xp;
-    color: white;
-    font-size: 25px;
-    position: relative;
-    top: 25%;
-    text-align: center;
-    font-weight: 100;
-    word-spacing: 5px;
-    letter-spacing: 3px;
-    
-}
 .botline{
     height: 0.5px;
     margin: 0px;
     padding: 0px;
     background-color: white;
     position: relative;
-    top: 55%;
+    top: 65%;
     border-radius: 10px;
     width: 70%;
     margin-left: auto;
