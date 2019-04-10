@@ -2,6 +2,7 @@
 .box1, .box2, .box3 {
     color: white;
 }
+
 .box1{
     background-color: white;    
     width: 100%;
@@ -20,8 +21,7 @@
     margin-Right: 0%;
 }
 
-.box2{ 
-     
+.box2{     
     width: 100%;
     height: 40vh;
     background-color: white;
@@ -39,6 +39,7 @@
     margin-right: 8%;
     margin-left: 8%;
 }
+
 .box3{
     background-color: white;
     width: 100%;
@@ -48,6 +49,7 @@
     position: relative;
    
 }
+
 #box3cover{
     width: 16%;
     height: 41vh;
@@ -67,33 +69,30 @@
     margin-bottom: 6vh; 
     
 }
+
 .box2title,.box3title{
     margin-bottom: 0px;
 }
+
 .footer{
     background-color: #59C657;
     height: 16vh;
     width: 100%;
-    
 }
-/*
-#box1cover:hover,.box2:hover,.box3:hover{
-    margin-top: 10px;
-    position: relative;
-    bottom: 20px;
-}
-*/
+
 body{
     margin: 0px;
     overflow: hidden;
     font-family: 'Roboto';
 }
+
 section{
     background-image: url("../assets/cloud.jpg");
     height: 67vh;
     width: 100%;
     margin: 0px;   
 }
+
 .img1, .img2, .img3{
     width: 50px;
     position: absolute;
@@ -102,34 +101,23 @@ section{
 }
 
 
-h3{
-    margin: 0px;
-    padding: 0xp;
-    color: white;
-    font-size: 25px;
-    position: relative;
-    top: 25%;
-    text-align: center;
-    font-weight: 100;
-    word-spacing: 5px;
-    letter-spacing: 3px;
-    
-}
 .botline{
     height: 0.5px;
     margin: 0px;
     padding: 0px;
     background-color: white;
     position: relative;
-    top: 55%;
+    top: 65%;
     border-radius: 10px;
     width: 70%;
     margin-left: auto;
     margin-right: auto;
 }
+
 .boxtext{
     margin-left: 3%;
 }
+
 button {
     background-color: #59C657;
     color: white;
@@ -143,11 +131,13 @@ button {
     float:right;
   
 }
+
 button:hover {
     background-color: #3F3F3F;
     color: white;
     font-weight: bold;
 }
+
 body{
     font-family: 'Roboto', sans-serif;
 }
