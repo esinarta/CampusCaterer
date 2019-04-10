@@ -24,7 +24,7 @@ $(document).ready(function() {
                     $('#ivory').css('margin-top', '20px');
                     $('#emerald').insertAfter( "#ivory" );
                     $('#emerald').css('margin-top', '20px');
-                    $('#bear').insertAfter( "#ivory" );
+                    $('#bear').insertAfter( "#emerald" );
                     $('#bear').css('margin-top', '20px');
                     $('#modesty').insertAfter( "#bear" );
                     $('#modesty').css('margin-top', '20px');

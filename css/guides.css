@@ -67,7 +67,7 @@ a {
     width: 25%;
     float: left;
     margin: 0 2% 0 2%;
-    font-size: 1.7em;
+    font-size: 12pt;
 }
    
 .guide1title, .guide2title{
@@ -89,7 +89,7 @@ a {
 
 .arrow{
     width: 10%;
-    top: 68%;
+    top: 75%;
     left: 8%;
     position: absolute;
 }
