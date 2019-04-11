@@ -1,7 +1,6 @@
 
 $(document).ready(function() {
-/*<![CDATA[*/
-
+    //Shows detailed information when result clicked
     $(".results").click(function(){
         $(this).children(".details").slideToggle(250);
         $(this).children(".details").toggleClass('.details');
@@ -10,13 +9,8 @@ $(document).ready(function() {
     var authRef = firebase.auth();
     authRef.onAuthStateChanged(function(user) {
         var firebaseRef = firebase.database().ref("users/" + firebase.auth().currentUser.uid)
-        /*if (user) {
-            console.log('Display name onAuthStateChanged : '+ user.displayName);
-            console.log(user.uid);
-            var uid = user.uid;
-            var user = firebase.auth().currentUser;
-        }*/ 
 
+        //Checks which goal a user has chosen and displays corresponding guides.
         if (firebaseRef.once("value")
             .then(function(snapshot) {
                 if (snapshot.hasChild("goal3")) {

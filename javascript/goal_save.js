@@ -12,12 +12,14 @@ authRef.onAuthStateChanged(function(user) {
     }
 });
 
+//Toggles color of goal chosen
 $('.cbdiv').on('click', function(){
     var checkbox = $(this).children('input[type="checkbox"]');
     checkbox.prop('checked', !checkbox.prop('checked'));
     $(this).toggleClass('chosen');
  });
 
+ //Checks which goal is chosen and stores it in database
 function submit() {
 if (document.getElementById("cb1").checked == true) {
     var checkedValue1 = document.getElementById('cb1').value;
@@ -128,6 +130,6 @@ if (document.getElementById("cb5").checked == true) {
     });
 
 }
-setTimeout(function(){ window.location.href="results.html" }, 1000);
+setTimeout(function(){ window.location.href="results.html" }, 250);
 }
       

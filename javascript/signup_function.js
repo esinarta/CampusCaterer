@@ -2,13 +2,13 @@
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 var uiConfig = {
   callbacks: {
-    signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+    signInSuccessWithAuthResult: function (authResult, redirectUrl) {
       // User successfully signed in.
       // Return type determines whether we continue the redirect automatically
       // or whether we leave that to developer to handle.
       return true;
     },
-    uiShown: function() {
+    uiShown: function () {
       // The widget is rendered.
       // Hide the loader.
       document.getElementById('loader').style.display = 'none';
@@ -20,79 +20,56 @@ var uiConfig = {
   signInOptions: [
     // Leave the lines as is for the providers you want to offer your users.
     //firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-   // firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+    // firebase.auth.FacebookAuthProvider.PROVIDER_ID,
     //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-   // firebase.auth.GithubAuthProvider.PROVIDER_ID,
+    // firebase.auth.GithubAuthProvider.PROVIDER_ID,
     firebase.auth.EmailAuthProvider.PROVIDER_ID,
-   // firebase.auth.PhoneAuthProvider.PROVIDER_ID
+    // firebase.auth.PhoneAuthProvider.PROVIDER_ID
   ],
   // Terms of service url.
   tosUrl: '<your-tos-url>',
   // Privacy policy url.
   privacyPolicyUrl: '<your-privacy-policy-url>'
 };
-
 // The start method will wait until the DOM is loaded.
 ui.start('#firebaseui-auth-container', uiConfig);
 
-firebase.auth().onAuthStateChanged(function(user) {
+firebase.auth().onAuthStateChanged(function (user) {
 
   if (user) {
     // User is signed in.
-     
-     document.getElementById("login_div").style.display = "none";
-     document.getElementById("signup").style.display = "none";
-     
+    document.getElementById("login_div").style.display = "none";
+    document.getElementById("signup").style.display = "none";
+    var user = firebase.auth().currentUser;
 
-     var user = firebase.auth().currentUser;
-
-     if(user != null){
-
-        var email_id = user.email;
-        
-        window.location.href = "navigation.html";
-        
-
-
-
-     }
-
-
-
+    if (user != null) {
+      var email_id = user.email;
+      window.location.href = "navigation.html";
+    }
   } else {
     // No user is signed in.
-    
     document.getElementById("login_div").style.display = "block";
     document.getElementById("signup").style.display = "none";
-    
-      }
+  }
 });
 
-function login(){
-
+function login() {
   var userEmail = document.getElementById("email_field").value;
   var userPass = document.getElementById("password_field").value;
-
- 
-
-  firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
-  // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-   alert("Error : " + errorMessage);
-  // ...
-});
+  firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function (error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    alert("Error : " + errorMessage);
+    // ...
+  });
 }
 
-function logout(){
-
-firebase.auth().signOut();
-
+function logout() {
+  firebase.auth().signOut();
 }
 
-function signup(){
-
-    document.getElementById("signup").style.display = "block";
-    document.getElementById("login_div").style.display = "none";
-    
+function signup() {
+  document.getElementById("signup").style.display = "block";
+  document.getElementById("login_div").style.display = "none";
 }

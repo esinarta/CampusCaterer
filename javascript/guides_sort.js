@@ -2,6 +2,7 @@
     authRef.onAuthStateChanged(function(user) {
     var firebaseRef = firebase.database().ref("users/" + firebase.auth().currentUser.uid)
 
+    //Checks which goal a user has chosen and displays corresponding guides.
     if (firebaseRef.once("value")
     .then(function(snapshot) {
         var hasGoal = snapshot.hasChild("goal3");

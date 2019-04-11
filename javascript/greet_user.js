@@ -1,5 +1,6 @@
 var authRef = firebase.auth();
 authRef.onAuthStateChanged(function(user) {
+    //If user is logged in, display name
     if (user) {
         console.log('Display name onAuthStateChanged : '+ user.displayName);
         console.log(user.uid);

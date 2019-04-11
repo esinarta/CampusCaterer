@@ -19,7 +19,6 @@ body{
     position: relative;
     text-align: center;
 }
-
 /* Remove margins and padding from the list */
 .goals ul {
     margin: 0;
@@ -36,7 +35,6 @@ body{
     transition: 0.2s;
     text-align: left;
 }
-
 /* Darker background-color on hover */
 .goals ul li {
     background: white;

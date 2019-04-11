@@ -1,85 +1,68 @@
 <html>
 
-<head>
-        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-        <link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" type="text/css" href="NavigationPage.css"/>
-        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-        <link type="text/css" rel="stylesheet" href="../css/navbar.css"/>
-        <link type="text/css" rel="stylesheet" href="../css/signup.css"/>
-        <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
-        <script src="../javascript/setup_firebase.js"></script>
-        <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyA6aJwNLnNEbn2FZb5iiCGcwTnEq3B9fPU",
-    authDomain: "foodapp-12113.firebaseapp.com",
-    databaseURL: "https://foodapp-12113.firebaseio.com",
-    projectId: "foodapp-12113",
-    storageBucket: "foodapp-12113.appspot.com",
-    messagingSenderId: "137830050682"
-  };
-  firebase.initializeApp(config);
-</script>
-<script src="../javascript/signup_function.js"></script>
+  <head>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="NavigationPage.css" />
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <link type="text/css" rel="stylesheet" href="../css/navbar.css" />
+    <link type="text/css" rel="stylesheet" href="../css/signup.css" />
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+    <script src="../javascript/setup_firebase.js"></script>
+    <script src="../javascript/signup_function.js"></script>
 
-</head>
-<body>
-<header>
-             <div class="title">
-                <img class="logo" src="..\assets\logo2.png">
-                <p class="titleword">Campus Caterer</p>
-            </div>
-            <div class="line"></div>
-            <nav id="navbar">
-            <ul>
-                <li><a href=navigation.html class="navitext"><div class="home">Home</div></a></li>
-                <li><a href=goals.html class="navitext"><div class="profile">Profile</div></a></li>
-                <li><a href=results.html class="navitext"><div class="search">Search</div></a></li>
-                <li><a href=guides.html class="navitext"><div class="guide">Guides</div></a></li>
-            </ul>
-            </nav>
-            <script src="../javascript/hover.js"></script>
-        </header>     
-        
+  </head>
 
+  <body>
+    <header>
+      <div class="title">
+        <img class="logo" src="..\assets\logo2.png">
+        <p class="titleword">Campus Caterer</p>
+      </div>
+      <div class="line"></div>
+      <nav id="navbar">
+        <ul>
+          <li><a href=navigation.html class="navitext">
+              <div class="home">Home</div>
+            </a></li>
+          <li><a href=goals.html class="navitext">
+              <div class="profile">Profile</div>
+            </a></li>
+          <li><a href=results.html class="navitext">
+              <div class="search">Search</div>
+            </a></li>
+          <li><a href=guides.html class="navitext">
+              <div class="guide">Guides</div>
+            </a></li>
+        </ul>
+      </nav>
+      <script src="../javascript/hover.js"></script>
+    </header>
 
-<div class = "main-div" id="login_div">
+    <div class="main-div" id="login_div">
+      <h1 class="header1">Welcome!</h1>
+      <h2 class="header2"> We Put The "App" In Appetite</h2>
+      <h2 class="header3"> Easy as 1, 2, 3 </h2>
+      <br><br>
+      <form>
+        <input type="email" placeholder="Email..." id="email_field">
+        <input type="password" placeholder="Password..." id="password_field">
+      </form>
+      <button onclick="login()"> Login to your Account </button>
+      <button onclick="signup()"> Sign Up </button>
+      <div>
+        <p class="steps1"><span> Step 3: </span> View Food Options and Guides! </p>
+        <p class="steps2"><span> Step 2: </span> Select Goals!</p>
+        <p class="steps3"><span> Step 1: </span> Sign Up or Login! </p>
+      </div>
+    </div>
 
+    <div id="signup">
+      <div id="firebaseui-auth-container"></div>
+      <div id="loader">Loading...</div>
+    </div>
 
+  </body>
 
-<h1 class = "header1">Welcome!</h1>
-        <h2 class = "header2"> We Put The "App" In Appetite</h2>
-        <h2 class = "header3"> Easy as 1, 2, 3 </h2>
-        <br><br>
-
-
-
-<form>
-<input type = "email" placeholder="Email..." id ="email_field">
-<input type = "password" placeholder="Password..." id="password_field">
-</form>
-
-<button onclick="login()"> Login to your Account </button>
-<button onclick="signup()"> Sign Up </button>
-
-<div>
-                <p class = "steps1"><span> Step 3: </span> View Food Options and Guides! </p>
-                <p class = "steps2"><span> Step 2: </span> Select Goals!</p>
-                <p class = "steps3"><span> Step 1: </span> Sign Up or Login! </p>
-            </div>
-
-</div>
-
-
-
-<div id = "signup">
-<div id="firebaseui-auth-container"></div>
-<div id="loader">Loading...</div>
-</div>
-
-
-
-</body>
 </html>

@@ -4,24 +4,19 @@ body{
     overflow: hidden;
     font-family: 'Roboto';
 }
-
-
 #greeting {
     padding-top: 15px;
     padding-left: 10px;
 }
-
 a {
     color: white;
     text-decoration: none;
 }
-
 #weight, #muscle, #money, #eco, #healthy {
     display: none;
     color: black;
     text-decoration: none;
 }
-
 #greeting {
     font-size: 11pt;
     font-weight: 500;
@@ -30,7 +25,6 @@ a {
     padding-left: 10px;
     margin-bottom: 20px;
 }
-
 .guide1{ 
     width: 25%;
     float: left;  
@@ -44,7 +38,6 @@ a {
     background-color: white;
     top: 10%;
 }
-
 .guide2{ 
     width: 25%;
     float: left;
@@ -57,40 +50,27 @@ a {
     left: 10%;
     background-color: white;   
 }
-
 .heading{
     margin-bottom: 3%;
     margin-left: 2%;
 }
-
 .descript{
     width: 25%;
     float: left;
     margin: 0 2% 0 2%;
     font-size: 12pt;
 }
-   
 .guide1title, .guide2title{
     color: #484747;
     font-size: 40px;
     text-align: center; 
 }
-    
 .img1,.img2{
     width: 50px;
     position: absolute;
     bottom: 5%;
     left: 10%;
 }
-
 .guidetext{
     margin: 2%;
 }
-
-.arrow{
-    width: 10%;
-    top: 75%;
-    left: 8%;
-    position: absolute;
-}
-
