@@ -129,6 +129,6 @@ if (document.getElementById("cb5").checked == true) {
     });
 
 }
-setTimeout(function(){ window.location.href="results.html" }, 2000);
+setTimeout(function(){ window.location.href="navigation.html" }, 2000);
 }
       
