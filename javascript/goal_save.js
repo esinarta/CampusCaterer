@@ -32,7 +32,7 @@ if (document.getElementById("cb1").checked == true) {
     guide1: weight
     });
 
-} if (document.getElementById("cb1").checked == false) {
+} else if (document.getElementById("cb1").checked == false) {
     firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal1").set({
     goal1: null
     });
@@ -54,7 +54,7 @@ if (document.getElementById("cb2").checked == true) {
     });
 
 
-} if (document.getElementById("cb2").checked == false) {
+} else if (document.getElementById("cb2").checked == false) {
     firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal2").set({
     goal2: null
     });
@@ -118,7 +118,6 @@ if (document.getElementById("cb5").checked == true) {
     firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/guide5").set({
     guide5: eco
     });
-
 
 } else if (document.getElementById("cb5").checked == false){
     firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal5").set({
