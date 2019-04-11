@@ -32,6 +32,10 @@ if (document.getElementById("cb1").checked == true) {
     guide1: weight
     });
 
+    var promise = firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal1").set({
+        goal1: checkedValue1
+    });
+
 } if (document.getElementById("cb1").checked == false) {
     firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal1").set({
     goal1: null
@@ -53,6 +57,9 @@ if (document.getElementById("cb2").checked == true) {
     guide2: muscle
     });
 
+    var promise = firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal2").set({
+        goal2: checkedValue5
+    });
 
 } if (document.getElementById("cb2").checked == false) {
     firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal2").set({
@@ -75,6 +82,9 @@ if (document.getElementById("cb3").checked == true) {
     guide3: healthy
     });
 
+    var promise = firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal4").set({
+        goal3: checkedValue3
+    });
 
 } else if (document.getElementById("cb3").checked == false) {
     firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal3").set({
@@ -95,6 +105,10 @@ if (document.getElementById("cb4").checked == true) {
     var money = localStorage.getItem("money");
     firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/guide4").set({
     guide4: money
+    });
+
+    var promise = firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal4").set({
+        goal4: checkedValue4
     });
 
 
@@ -119,6 +133,9 @@ if (document.getElementById("cb5").checked == true) {
     guide5: eco
     });
 
+    var promise = firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal5").set({
+        goal5: checkedValue5
+    });
 
 } else if (document.getElementById("cb5").checked == false){
     firebase.database().ref("users/" + firebase.auth().currentUser.uid + "/goal5").set({
@@ -130,6 +147,6 @@ if (document.getElementById("cb5").checked == true) {
     });
 
 }
-setTimeout(function(){ window.location.href="results.html" }, 1500);
+promise.then(function(){ window.location.href="results.html" });
 }
       
