@@ -9,26 +9,24 @@
     margin-bottom: 0px;
     background-color: white;
     overflow: hidden;
+    
 }   
+
 #navbar ul {
     display: table-row;
     position: relative; 
+    
 }
 #navbar li {
     display: table-cell;
     border: 0.5px solid #DCDCDC;
-    
     border-collapse: collapse;
-    
-    
 }
 .navitext {
     color:#484747;
     text-decoration: none;
     font-weight: bold;
-    font-size: 14px;
-    font-family:  sans-serif;
-   
+    font-size: 14px;       
     
 }
 
@@ -57,11 +55,9 @@
     width: 100%;
     z-index:-1;
     background-color: white;
-
-   
 }
 .title{
- 
+    width: 100vw;
     height: 10.5vh;
     background-color: white;
 }
@@ -70,13 +66,12 @@
     margin: 0px;
     padding: 0px;
     font-size: 20px;
-    font-family: sans-serif;
     position: relative;
     top: 30%;
-   
     text-align: left;
     font-weight: 600;
     float: left;
+    
 }
 #navbar div{
     text-align: center;
@@ -102,4 +97,10 @@
     margin: 0px;
     left: 95%;
     top: 0%;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+}
+.rest{
+    width: 18vw;
 }
